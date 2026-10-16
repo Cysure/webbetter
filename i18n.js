@@ -218,6 +218,9 @@
     'Franz Marc, Blue Horse I, 1911': 'Franz Marc, Blaues Pferd I, 1911',
     'Ferdinand Hodler, Eiger, Mönch and Jungfrau in Moonlight, 1908': 'Ferdinand Hodler, Eiger, Mönch und Jungfrau im Mondschein, 1908',
 
+    'GUSTAV KLIMT · THE KISS · 1907–08': 'GUSTAV KLIMT · DER KUSS · 1907–08',
+    'Gustav Klimt, The Kiss, 1907–08': 'Gustav Klimt, Der Kuss, 1907–08',
+
     // attributes
     'Web Better home': 'Web Better Startseite',
     'Toggle night mode': 'Nachtmodus umschalten',

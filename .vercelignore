@@ -1,0 +1,4 @@
+tools
+assets/src
+*.py
+.DS_Store

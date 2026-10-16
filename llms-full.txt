@@ -1,0 +1,160 @@
+# Web Better — full text for language models
+
+Web Better (webbetter.ch) is a design and development studio for modern companies.
+Contact: hello@webbetter.ch. Website: https://webbetter.ch. Languages: English and German.
+Last updated: 2026-10-16.
+
+## What Web Better does
+
+Web Better pairs cutting-edge design with engineering, SEO and GEO, so modern companies look exceptional, load instantly and get recommended by the AI assistants their customers already ask.
+
+## Services
+
+### Cutting-edge design
+
+UI/UX, product design, design systems, motion, 3D and WebGL, art direction.
+
+### Websites and apps
+
+Websites, web apps, iOS and Android apps, headless CMS, e-commerce, integrations, maintenance and support.
+
+### SEO and optimization
+
+Technical SEO, site architecture, schema markup, content strategy, Core Web Vitals, conversion optimization and analytics.
+
+### GEO and AI search
+
+Generative engine optimization: visibility and citations in ChatGPT, Perplexity, Gemini, Google AI Overviews, Copilot and Claude.
+
+## Frequently asked questions (English)
+
+### What does Web Better do?
+
+Web Better is a design and development studio for modern companies. We design brands and interfaces, build websites and apps, and make them visible in Google and in AI assistants through SEO and GEO.
+
+### How much does a website cost?
+
+Every project is scoped individually, based on the number of pages, features, languages and integrations. After a short call you receive a fixed proposal with clear deliverables, so there are no surprises.
+
+### How long does it take to build a website?
+
+A focused marketing website usually takes a few weeks from kickoff to launch. Larger platforms, online shops and apps take longer. Your proposal includes a timeline with clear milestones.
+
+### Which technologies and CMS do you use?
+
+We choose the stack for each project: modern frameworks such as Next.js or Astro, a headless CMS such as Sanity, Storyblok or WordPress, and Shopify for commerce. Your team can edit content without touching code.
+
+### Will my website work on mobile and be accessible?
+
+Yes. Every site is designed mobile-first, tested on real devices and built to the WCAG accessibility guidelines, so it works for every visitor and every screen size.
+
+### Can you redesign my existing website without losing Google rankings?
+
+Yes. We map every existing URL, set up 301 redirects, carry over titles, descriptions and structured data, and monitor Google Search Console after launch, so your rankings move up, not down.
+
+### Do you offer hosting, maintenance and support?
+
+Yes. We deploy on fast global hosting such as Vercel and offer ongoing care: updates, security, backups, performance checks and continuous improvements.
+
+### Can you build an online shop?
+
+Yes. We design and build e-commerce on Shopify or custom headless stacks, including product pages that rank, fast checkout and integrations with payments, inventory and marketing tools.
+
+### Will my website respect GDPR and Swiss data protection?
+
+We build privacy-first: consent only where it is needed, privacy-friendly analytics and a setup aligned with the GDPR and the Swiss Federal Act on Data Protection (FADP). Legal texts such as your privacy policy should be reviewed by your legal advisor.
+
+### What is GEO (generative engine optimization)?
+
+GEO is the practice of making a website easy for AI assistants such as ChatGPT, Perplexity, Gemini, Copilot and Claude to read, trust and quote. It combines clear entities, citable facts, structured data and files like llms.txt, so your brand is cited inside AI answers.
+
+### How is GEO different from SEO?
+
+SEO earns a ranking in a list of links. GEO earns a mention inside the answer itself. Both need a fast, well-structured site, but GEO adds a focus on facts, sources and entities that language models can verify and cite.
+
+### How do you measure SEO and GEO results?
+
+We track rankings, clicks and impressions in Google Search Console, conversions in analytics, Core Web Vitals from real users, and how often AI assistants mention and cite your brand for the questions your customers ask.
+
+### How fast will my new website be?
+
+We design and build for green Core Web Vitals on real devices: fast loading, no layout shift and quick responses to every tap. The live numbers in the footer of this page are measured in your browser right now.
+
+### Do you build websites in English and German?
+
+Yes. We build multilingual sites with real language versions, hreflang and translated metadata, so each audience and each search engine gets the right page.
+
+### Can I update the website content myself?
+
+Yes. We set up an editor that fits your team, with reusable blocks, previews and roles, and we train your team at handover.
+
+### How do I start a project with Web Better?
+
+Write to hello@webbetter.ch with your goals and timeline. Every project is scoped individually, and you receive a clear proposal.
+
+## Häufige Fragen (Deutsch)
+
+### Was macht Web Better?
+
+Web Better ist ein Design- und Entwicklungsstudio für moderne Unternehmen. Wir gestalten Marken und Interfaces, bauen Websites und Apps und machen sie mit SEO und GEO sichtbar, bei Google und in KI-Assistenten.
+
+### Was kostet eine Website?
+
+Jedes Projekt wird individuell offeriert, je nach Anzahl Seiten, Funktionen, Sprachen und Integrationen. Nach einem kurzen Gespräch erhalten Sie ein verbindliches Angebot mit klaren Leistungen, ohne Überraschungen.
+
+### Wie lange dauert die Entwicklung einer Website?
+
+Eine fokussierte Marketing-Website dauert meist einige Wochen vom Kickoff bis zum Launch. Grössere Plattformen, Onlineshops und Apps brauchen länger. Ihr Angebot enthält einen Zeitplan mit klaren Meilensteinen.
+
+### Welche Technologien und welches CMS verwenden Sie?
+
+Wir wählen den Stack pro Projekt: moderne Frameworks wie Next.js oder Astro, ein Headless CMS wie Sanity, Storyblok oder WordPress und Shopify für E-Commerce. Ihr Team pflegt Inhalte, ohne Code anzufassen.
+
+### Funktioniert meine Website auf dem Smartphone und ist sie barrierefrei?
+
+Ja. Jede Website wird Mobile-first gestaltet, auf echten Geräten getestet und nach den WCAG-Richtlinien für Barrierefreiheit gebaut, damit sie für alle Besucher und jede Bildschirmgrösse funktioniert.
+
+### Können Sie meine bestehende Website neu gestalten, ohne Google-Rankings zu verlieren?
+
+Ja. Wir erfassen jede bestehende URL, richten 301-Weiterleitungen ein, übernehmen Titel, Beschreibungen und strukturierte Daten und überwachen nach dem Launch die Google Search Console, damit Ihre Rankings steigen statt sinken.
+
+### Bieten Sie Hosting, Wartung und Support an?
+
+Ja. Wir veröffentlichen auf schnellem, globalem Hosting wie Vercel und bieten laufende Betreuung: Updates, Sicherheit, Backups, Performance-Checks und kontinuierliche Verbesserungen.
+
+### Können Sie einen Onlineshop bauen?
+
+Ja. Wir gestalten und entwickeln E-Commerce auf Shopify oder individuellen Headless-Stacks, mit Produktseiten, die ranken, schnellem Checkout und Integrationen für Zahlung, Lager und Marketing-Tools.
+
+### Entspricht meine Website der DSGVO und dem Schweizer Datenschutz?
+
+Wir bauen datenschutzfreundlich: Einwilligung nur, wo nötig, datensparsame Analytics und ein Setup im Einklang mit der DSGVO und dem Schweizer Datenschutzgesetz (DSG). Rechtstexte wie Ihre Datenschutzerklärung sollten von Ihrer Rechtsberatung geprüft werden.
+
+### Was ist GEO (Generative Engine Optimization)?
+
+GEO sorgt dafür, dass KI-Assistenten wie ChatGPT, Perplexity, Gemini, Copilot und Claude eine Website leicht lesen, ihr vertrauen und sie zitieren können. Dazu gehören klare Entitäten, zitierfähige Fakten, strukturierte Daten und Dateien wie llms.txt, damit Ihre Marke in KI-Antworten genannt wird.
+
+### Worin unterscheidet sich GEO von SEO?
+
+SEO bringt Sie in eine Liste von Links. GEO bringt Sie in die Antwort selbst. Beides braucht eine schnelle, gut strukturierte Website, GEO setzt aber zusätzlich auf Fakten, Quellen und Entitäten, die Sprachmodelle prüfen und zitieren können.
+
+### Wie messen Sie SEO- und GEO-Erfolge?
+
+Wir verfolgen Rankings, Klicks und Impressionen in der Google Search Console, Conversions in Analytics, Core Web Vitals echter Nutzer und wie oft KI-Assistenten Ihre Marke bei den Fragen Ihrer Kundschaft nennen und zitieren.
+
+### Wie schnell wird meine neue Website?
+
+Wir gestalten und entwickeln für grüne Core Web Vitals auf echten Geräten: schnelles Laden, keine Layoutsprünge und flinke Reaktion auf jede Eingabe. Die Live-Werte im Footer dieser Seite werden gerade in Ihrem Browser gemessen.
+
+### Bauen Sie Websites auf Englisch und Deutsch?
+
+Ja. Wir bauen mehrsprachige Websites mit echten Sprachversionen, hreflang und übersetzten Metadaten, damit jedes Publikum und jede Suchmaschine die richtige Seite erhält.
+
+### Kann ich die Inhalte der Website selbst bearbeiten?
+
+Ja. Wir richten einen Editor ein, der zu Ihrem Team passt, mit wiederverwendbaren Bausteinen, Vorschau und Rollen, und schulen Ihr Team bei der Übergabe.
+
+### Wie starte ich ein Projekt mit Web Better?
+
+Schreiben Sie an hello@webbetter.ch mit Ihren Zielen und Ihrem Zeitplan. Jedes Projekt wird individuell offeriert, und Sie erhalten ein klares Angebot.
+

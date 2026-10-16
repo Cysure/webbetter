@@ -1,0 +1,45 @@
+# Web Better
+
+> Web Better (webbetter.ch) is a design and development studio for modern companies. It designs brands and interfaces, builds fast websites and apps, and makes companies visible in Google and in AI assistants through SEO and GEO (generative engine optimization). Contact: hello@webbetter.ch. Languages: English and German.
+
+## Services
+
+- **Cutting-edge design**: UI/UX, product design, design systems, motion, 3D and WebGL, art direction.
+- **Websites and apps**: Websites, web apps, iOS and Android apps, headless CMS, e-commerce, integrations, maintenance and support.
+- **SEO and optimization**: Technical SEO, site architecture, schema markup, content strategy, Core Web Vitals, conversion optimization and analytics.
+- **GEO and AI search**: Generative engine optimization: visibility and citations in ChatGPT, Perplexity, Gemini, Google AI Overviews, Copilot and Claude.
+
+## Selected client work
+
+- [QuFi Network](https://qufi.network): protocol website for the verification layer of the post-quantum economy (website, WebGL, brand).
+- [Veyns](https://veyns.io): immersive brand site for palm-vein identity (experience, WebGL, brand).
+
+## Key pages
+
+- [Home (English)](https://webbetter.ch/): services, work, FAQ and contact.
+- [Startseite (Deutsch)](https://webbetter.ch/de/): German version of the site.
+- [Full text for language models](https://webbetter.ch/llms-full.txt): services and every FAQ answer in plain text.
+
+## FAQ
+
+- What does Web Better do? Web Better is a design and development studio for modern companies. We design brands and interfaces, build websites and apps, and make them visible in Google and in AI assistants through SEO and GEO.
+- How much does a website cost? Every project is scoped individually, based on the number of pages, features, languages and integrations. After a short call you receive a fixed proposal with clear deliverables, so there are no surprises.
+- How long does it take to build a website? A focused marketing website usually takes a few weeks from kickoff to launch. Larger platforms, online shops and apps take longer. Your proposal includes a timeline with clear milestones.
+- Which technologies and CMS do you use? We choose the stack for each project: modern frameworks such as Next.js or Astro, a headless CMS such as Sanity, Storyblok or WordPress, and Shopify for commerce. Your team can edit content without touching code.
+- Will my website work on mobile and be accessible? Yes. Every site is designed mobile-first, tested on real devices and built to the WCAG accessibility guidelines, so it works for every visitor and every screen size.
+- Can you redesign my existing website without losing Google rankings? Yes. We map every existing URL, set up 301 redirects, carry over titles, descriptions and structured data, and monitor Google Search Console after launch, so your rankings move up, not down.
+- Do you offer hosting, maintenance and support? Yes. We deploy on fast global hosting such as Vercel and offer ongoing care: updates, security, backups, performance checks and continuous improvements.
+- Can you build an online shop? Yes. We design and build e-commerce on Shopify or custom headless stacks, including product pages that rank, fast checkout and integrations with payments, inventory and marketing tools.
+- Will my website respect GDPR and Swiss data protection? We build privacy-first: consent only where it is needed, privacy-friendly analytics and a setup aligned with the GDPR and the Swiss Federal Act on Data Protection (FADP). Legal texts such as your privacy policy should be reviewed by your legal advisor.
+- What is GEO (generative engine optimization)? GEO is the practice of making a website easy for AI assistants such as ChatGPT, Perplexity, Gemini, Copilot and Claude to read, trust and quote. It combines clear entities, citable facts, structured data and files like llms.txt, so your brand is cited inside AI answers.
+- How is GEO different from SEO? SEO earns a ranking in a list of links. GEO earns a mention inside the answer itself. Both need a fast, well-structured site, but GEO adds a focus on facts, sources and entities that language models can verify and cite.
+- How do you measure SEO and GEO results? We track rankings, clicks and impressions in Google Search Console, conversions in analytics, Core Web Vitals from real users, and how often AI assistants mention and cite your brand for the questions your customers ask.
+- How fast will my new website be? We design and build for green Core Web Vitals on real devices: fast loading, no layout shift and quick responses to every tap. The live numbers in the footer of this page are measured in your browser right now.
+- Do you build websites in English and German? Yes. We build multilingual sites with real language versions, hreflang and translated metadata, so each audience and each search engine gets the right page.
+- Can I update the website content myself? Yes. We set up an editor that fits your team, with reusable blocks, previews and roles, and we train your team at handover.
+- How do I start a project with Web Better? Write to hello@webbetter.ch with your goals and timeline. Every project is scoped individually, and you receive a clear proposal.
+
+## Contact
+
+- Email: hello@webbetter.ch
+- Website: https://webbetter.ch

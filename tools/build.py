@@ -47,11 +47,11 @@ COPY = {
   }
 }
 
-def faq_items(lang):
+def faq_items(lang, items=None):
     out = []
-    for item in FAQ:
+    for item in (items if items is not None else [f for f in FAQ if f.get('home')]):
         q, a = item[lang]
-        a_html = html.escape(a, quote=False).replace('hello@webbetter.ch', '<a href="mailto:hello@webbetter.ch">hello@webbetter.ch</a>')
+        a_html = html.escape(a, quote=False).replace('beratung@webbetter.ch', '<a href="mailto:beratung@webbetter.ch">beratung@webbetter.ch</a>')
         out.append(f'''      <details class="faq-item">
         <summary><h3 class="faq-q">{html.escape(q, quote=False)}</h3><span class="faq-plus" aria-hidden="true"></span></summary>
         <p>{a_html}</p>
@@ -61,15 +61,15 @@ def faq_items(lang):
 def jsonld(lang):
     c = COPY[lang]
     graph = [
-      {"@type": "Organization", "@id": SITE + "/#org", "name": "Web Better", "alternateName": ["WebBetter", "webbetter.ch"],
+      {"@type": "Organization", "@id": SITE + "/#org", "name": "Web Better", "legalName": "WB Solutions", "alternateName": ["WebBetter", "webbetter.ch", "WB Solutions"],
        "url": SITE + "/", "logo": {"@type": "ImageObject", "url": SITE + "/assets/logo-webbetter.png", "width": 1040, "height": 586},
-       "image": SITE + "/assets/og-image.png", "email": "hello@webbetter.ch", "description": c['org_desc'],
+       "image": SITE + "/assets/og-image.png", "email": "beratung@webbetter.ch", "description": c['org_desc'],
        "knowsAbout": ["Web design", "UI/UX design", "Brand identity", "Website development", "Mobile app development", "E-commerce",
                       "Search engine optimization", "Technical SEO", "Core Web Vitals", "Generative engine optimization (GEO)",
                       "AI search visibility", "Answer engine optimization", "Structured data", "llms.txt", "WebGL"],
-       "contactPoint": {"@type": "ContactPoint", "email": "hello@webbetter.ch", "contactType": "sales", "availableLanguage": ["English", "German"]}},
+       "contactPoint": {"@type": "ContactPoint", "email": "beratung@webbetter.ch", "contactType": "sales", "availableLanguage": ["English", "German"]}},
       {"@type": "ProfessionalService", "@id": SITE + "/#service", "name": "Web Better", "url": SITE + "/",
-       "parentOrganization": {"@id": SITE + "/#org"}, "image": SITE + "/assets/og-image.png", "email": "hello@webbetter.ch",
+       "parentOrganization": {"@id": SITE + "/#org"}, "image": SITE + "/assets/og-image.png", "email": "beratung@webbetter.ch",
        "description": c['org_desc'],
        "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [
            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "description": d, "provider": {"@id": SITE + "/#org"}}} for n, d in c['services']]}},
@@ -79,7 +79,7 @@ def jsonld(lang):
        "inLanguage": lang, "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + "/#org"},
        "primaryImageOfPage": SITE + "/assets/og-image.png", "dateModified": TODAY},
       {"@type": "FAQPage", "@id": c['url'] + "#faq", "inLanguage": lang, "mainEntity": [
-          {"@type": "Question", "name": i[lang][0], "acceptedAnswer": {"@type": "Answer", "text": i[lang][1]}} for i in FAQ]},
+          {"@type": "Question", "name": i[lang][0], "acceptedAnswer": {"@type": "Answer", "text": i[lang][1]}} for i in FAQ if i.get('home')]},
     ]
     return '<script type="application/ld+json">\n' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1) + '\n  </script>'
 
@@ -189,27 +189,35 @@ de = de.replace('<html lang="en">', '<html lang="de">', 1)
 de = de.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n  <base href="/">', 1)
 t = Translator(); t.feed(de); t.close()
 de = ''.join(t.out)
+
+def de_links(doc):
+    doc = re.sub(r'href="/(seo|geo|faq|privacy)/', r'href="/de/\1/', doc)
+    doc = re.sub(r'(<a\b[^>]*?)href="/"', r'\1href="/de/"', doc)   # links only, never <base href="/">
+
+    return doc
+de = de_links(de)
 write('de/index.html', de)
 
+# ---------------------------------------------------------------- SEO, GEO and FAQ pages
+import importlib.util
+spec = importlib.util.spec_from_file_location('pages', os.path.join(ROOT, 'tools', 'pages.py'))
+pages = importlib.util.module_from_spec(spec); spec.loader.exec_module(pages)
+built_pages = pages.build({'read': read, 'write': write, 'Translator': Translator, 'de_links': de_links, 'FAQ': FAQ})
+
 # ---------------------------------------------------------------- sitemap, robots, llms
-write('sitemap.xml', f'''<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>{SITE}/</loc>
+def url_entry(path):
+    en, de_ = f'{SITE}/{path}', f'{SITE}/de/{path}'
+    alts = f"""    <xhtml:link rel="alternate" hreflang="en" href="{en}"/>
+    <xhtml:link rel="alternate" hreflang="de" href="{de_}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{en}"/>"""
+    return ''.join(f"""  <url>
+    <loc>{u}</loc>
     <lastmod>{TODAY}</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="{SITE}/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="{SITE}/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/"/>
+{alts}
   </url>
-  <url>
-    <loc>{SITE}/de/</loc>
-    <lastmod>{TODAY}</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="{SITE}/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="{SITE}/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/"/>
-  </url>
-</urlset>
-''')
+""" for u in (en, de_))
+write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+      + ''.join(url_entry(p_) for p_ in ('', 'seo/', 'geo/', 'faq/', 'privacy/')) + '</urlset>\n')
 
 bots = ['Googlebot', 'Bingbot', 'Google-Extended', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
         'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Applebot', 'Applebot-Extended', 'CCBot', 'meta-externalagent', 'DuckAssistBot',
@@ -221,7 +229,7 @@ write('robots.txt', '# Web Better welcomes search engines and AI assistants.\n\n
 svc_en = COPY['en']['services']
 write('llms.txt', f'''# Web Better
 
-> Web Better (webbetter.ch) is a design and development studio for modern companies. It designs brands and interfaces, builds fast websites and apps, and makes companies visible in Google and in AI assistants through SEO and GEO (generative engine optimization). Contact: hello@webbetter.ch. Languages: English and German.
+> Web Better (webbetter.ch) is a design and development studio for modern companies. It designs brands and interfaces, builds fast websites and apps, and makes companies visible in Google and in AI assistants through SEO and GEO (generative engine optimization). Contact: beratung@webbetter.ch. Languages: English and German.
 
 ## Services
 
@@ -235,6 +243,9 @@ write('llms.txt', f'''# Web Better
 
 - [Home (English)]({SITE}/): services, work, FAQ and contact.
 - [Startseite (Deutsch)]({SITE}/de/): German version of the site.
+- [SEO services]({SITE}/seo/): technical SEO, content, structured data and Core Web Vitals.
+- [GEO services]({SITE}/geo/): generative engine optimization for ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude.
+- [FAQ]({SITE}/faq/): answers on websites, costs, timelines, SEO, GEO and website optimisation.
 - [Full text for language models]({SITE}/llms-full.txt): services and every FAQ answer in plain text.
 
 ## FAQ
@@ -242,14 +253,24 @@ write('llms.txt', f'''# Web Better
 ''' + ''.join(f'- {i["en"][0]} {i["en"][1]}\n' for i in FAQ) + '''
 ## Contact
 
-- Email: hello@webbetter.ch
+- Email: beratung@webbetter.ch
 - Website: https://webbetter.ch
 ''')
+
+def llms_pages_text():
+    P = pages.llms_pages(); out = ''
+    for key, label in (('seo', 'SEO'), ('geo', 'GEO')):
+        c = P[key]['en']
+        out += f"## {label}: {c['h1a']} {c['h1b']}\n\n{c['lead']}\n\n"
+        for t, d, items in c['pillars']:
+            out += f"### {t}\n\n{d} " + '; '.join(items) + '.\n\n'
+        out += 'Process: ' + ' '.join(f"{i + 1}. {t}: {d}" for i, (t, d) in enumerate(c['steps'])) + '\n\n'
+    return out
 
 write('llms-full.txt', f'''# Web Better — full text for language models
 
 Web Better (webbetter.ch) is a design and development studio for modern companies.
-Contact: hello@webbetter.ch. Website: {SITE}. Languages: English and German.
+Contact: beratung@webbetter.ch. Website: {SITE}. Languages: English and German.
 Last updated: {TODAY}.
 
 ## What Web Better does
@@ -258,10 +279,10 @@ Web Better pairs cutting-edge design with engineering, SEO and GEO, so modern co
 
 ## Services
 
-''' + ''.join(f'### {n}\n\n{d}\n\n' for n, d in svc_en) + '''## Frequently asked questions (English)
+''' + ''.join(f'### {n}\n\n{d}\n\n' for n, d in svc_en) + llms_pages_text() + '''## Frequently asked questions (English)
 
 ''' + ''.join(f'### {i["en"][0]}\n\n{i["en"][1]}\n\n' for i in FAQ) + '''## Häufige Fragen (Deutsch)
 
 ''' + ''.join(f'### {i["de"][0]}\n\n{i["de"][1]}\n\n' for i in FAQ))
 
-print('built: index.html, de/index.html, sitemap.xml, robots.txt, llms.txt, llms-full.txt')
+print('built: index.html, de/index.html, ' + ', '.join(built_pages) + ', sitemap.xml, robots.txt, llms.txt, llms-full.txt')

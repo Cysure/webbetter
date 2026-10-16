@@ -93,8 +93,8 @@
     [/app|ios|android|mobile/i, 'Web Better designs and builds <b>web and mobile apps</b> end to end, from product design and prototyping to iOS, Android and the APIs behind them.'],
     [/design|brand|logo|ui|ux|identity/i, 'Web Better pairs <b>cutting-edge design</b> with engineering: brand systems, UI/UX, motion and WebGL, the kind of work you are scrolling through right now.'],
     [/speed|fast|performance|vitals|optimi/i, 'Speed is a feature. Web Better rebuilds sites for <b>sub-second loads</b> and green Core Web Vitals, which compounds into rankings, cheaper ads and higher conversion. See the live numbers in the footer of this page.'],
-    [/price|cost|budget|quote|how much/i, 'Every project is scoped individually. Write to <b>hello@webbetter.ch</b> with your goals and timeline, and you will get a clear proposal.'],
-    [/where|swiss|switzerland|location|based|contact|email/i, 'Web Better is a Swiss studio at <b>webbetter.ch</b>. The fastest way in is <b>hello@webbetter.ch</b>.']
+    [/price|cost|budget|quote|how much/i, 'Every project is scoped individually. Write to <b>beratung@webbetter.ch</b> with your goals and timeline, and you will get a clear proposal.'],
+    [/where|swiss|switzerland|location|based|contact|email/i, 'Web Better is a Swiss studio at <b>webbetter.ch</b>. The fastest way in is <b>beratung@webbetter.ch</b>.']
   ];
   const ANSWERS_DE = [
     [/geo|ki|ai|chatgpt|perplexity|gemini|llm|copilot|claude/i, '<b>Generative Engine Optimization (GEO)</b> macht eine Website für KI-Assistenten leicht lesbar, vertrauenswürdig und zitierbar: klare Entitäten, zitierfähige Fakten, strukturierte Daten und llms.txt. Web Better misst, wie oft Sie heute zitiert werden, und baut dann die Inhalte und die Technik, um das zu steigern.'],
@@ -102,11 +102,11 @@
     [/app|ios|android|mobil/i, 'Web Better gestaltet und entwickelt <b>Web- und Mobile-Apps</b> von A bis Z: vom Produktdesign und Prototyping bis zu iOS, Android und den APIs dahinter.'],
     [/design|marke|brand|logo|ui|ux/i, 'Web Better verbindet <b>wegweisendes Design</b> mit Engineering: Markensysteme, UI/UX, Motion und WebGL, also genau die Art Arbeit, durch die Sie gerade scrollen.'],
     [/schnell|speed|performance|vitals|optimi|ladezeit/i, 'Geschwindigkeit ist ein Feature. Web Better baut Websites mit <b>Ladezeiten unter einer Sekunde</b> und grünen Core Web Vitals. Das zahlt sich aus: bessere Rankings, günstigere Anzeigen, höhere Conversion. Die Live-Werte sehen Sie im Footer dieser Seite.'],
-    [/preis|kost|budget|offerte|angebot|wie viel|teuer/i, 'Jedes Projekt wird individuell offeriert. Schreiben Sie an <b>hello@webbetter.ch</b> mit Ihren Zielen und Ihrem Zeitplan, und Sie erhalten ein klares Angebot.'],
-    [/wo|schweiz|standort|kontakt|e-mail|email/i, 'Web Better ist ein Schweizer Studio, zu finden unter <b>webbetter.ch</b>. Am schnellsten erreichen Sie uns über <b>hello@webbetter.ch</b>.']
+    [/preis|kost|budget|offerte|angebot|wie viel|teuer/i, 'Jedes Projekt wird individuell offeriert. Schreiben Sie an <b>beratung@webbetter.ch</b> mit Ihren Zielen und Ihrem Zeitplan, und Sie erhalten ein klares Angebot.'],
+    [/wo|schweiz|standort|kontakt|e-mail|email/i, 'Web Better ist ein Schweizer Studio, zu finden unter <b>webbetter.ch</b>. Am schnellsten erreichen Sie uns über <b>beratung@webbetter.ch</b>.']
   ];
-  const DEFAULT_ANSWER_DE = '<b>Web Better</b> ist ein Schweizer Studio für Design, Websites, Apps, SEO und GEO, gebaut dafür, dass Marken gefunden werden: von Menschen und von KI. Fragen Sie nach einem dieser Themen oder schreiben Sie an <b>hello@webbetter.ch</b>.';
-  const DEFAULT_ANSWER = '<b>Web Better</b> is a Swiss design and development studio for design, websites, apps, SEO and GEO, built so brands get found by people and by AI. Ask about any of those, or write to <b>hello@webbetter.ch</b>.';
+  const DEFAULT_ANSWER_DE = '<b>Web Better</b> ist ein Schweizer Studio für Design, Websites, Apps, SEO und GEO, gebaut dafür, dass Marken gefunden werden: von Menschen und von KI. Fragen Sie nach einem dieser Themen oder schreiben Sie an <b>beratung@webbetter.ch</b>.';
+  const DEFAULT_ANSWER = '<b>Web Better</b> is a Swiss design and development studio for design, websites, apps, SEO and GEO, built so brands get found by people and by AI. Ask about any of those, or write to <b>beratung@webbetter.ch</b>.';
   const askBar = askForm;
   askInput.addEventListener('focus', () => askBar.classList.add('typing'));
   askInput.addEventListener('blur', () => { if (!askInput.value) askBar.classList.remove('typing'); });
@@ -351,15 +351,6 @@
       if (r.bottom < -200 || r.top > vh + 200) return;
       el.style.translate = `0 ${(r.top + r.height / 2 - vh / 2) * +el.dataset.speed * .5}px`;
     });
-
-    // footer wordmark letters rise into place
-    const wr = wordmark.getBoundingClientRect();
-    const wp = clamp((vh - wr.top) / (wr.height * 1.6));
-    wmReveal = wp;
-    if (!wordmark.classList.contains('gl')) wmLetters.forEach((l, i) => {
-      const k = clamp(wp * 1.6 - i * .06);
-      l.style.transform = `translateY(${(1 - k) * 70}%) rotate(${(1 - k) * (i % 2 ? 8 : -8)}deg)`;
-    });
   }
   addEventListener('scroll', update, { passive: true });
   addEventListener('resize', update);
@@ -539,14 +530,6 @@
         tileEls.forEach((el, i) => { el.parentElement.querySelector('.mono').style.opacity = Math.max(.15, rev[i]); });
         L.render(t * .6, rev);
       });
-
-      // liquid footer wordmark
-      const wmCv = document.createElement('canvas'); wmCv.className = 'wordmark-gl'; wordmark.appendChild(wmCv);
-      lazy(wordmark, () => {
-        const L = X.liquidWordmark(wmCv, wordmark);
-        if (L) { wmLetters.forEach(l => { l.style.transform = ''; }); wordmark.classList.add('gl'); }
-        return L;
-      }, (L, t) => { if (vis(wordmark)) L.render(t, wmReveal); });
     }
 
     /* scroll-velocity skew on work cards and insight rows */

@@ -184,7 +184,6 @@
     '/ INFO': '/ INFO',
     'Pricing': 'Preise',
     'FAQ': 'FAQ',
-    'Careers': 'Karriere',
     'BACK TO TOP': 'NACH OBEN',
     'THIS PAGE, MEASURED LIVE IN YOUR BROWSER': 'DIESE SEITE, LIVE IN IHREM BROWSER GEMESSEN',
     '© 2026 WEB BETTER. ALL RIGHTS RESERVED': '© 2026 WEB BETTER. ALLE RECHTE VORBEHALTEN',
@@ -221,6 +220,60 @@
     'GUSTAV KLIMT · THE KISS · 1907–08': 'GUSTAV KLIMT · DER KUSS · 1907–08',
     'Gustav Klimt, The Kiss, 1907–08': 'Gustav Klimt, Der Kuss, 1907–08',
 
+    // enquiry form
+    '[ START A PROJECT ]': '[ PROJEKT STARTEN ]',
+    "Let's build": 'Bauen wir',
+    "what's next.": 'das Nächste.',
+    'Tell us about your project. A real person reads every enquiry and replies personally.': 'Erzählen Sie uns von Ihrem Projekt. Jede Anfrage wird von einem Menschen gelesen und persönlich beantwortet.',
+    'We read your enquiry': 'Wir lesen Ihre Anfrage',
+    'A short call about your goals': 'Ein kurzes Gespräch über Ihre Ziele',
+    'A clear, fixed proposal': 'Ein klares, verbindliches Angebot',
+    'What can we help with?': 'Wobei können wir helfen?',
+    'Website': 'Website',
+    'App': 'App',
+    'Your name *': 'Ihr Name *',
+    'Company': 'Firma',
+    'Email *': 'E-Mail *',
+    'Phone': 'Telefon',
+    'Not sure yet': 'Noch unklar',
+    'Under CHF 10k': 'Unter CHF 10k',
+    'Budget': 'Budget',
+    'Tell us about your project *': 'Erzählen Sie uns von Ihrem Projekt *',
+    'By sending, you agree that we use your details to answer your enquiry.': 'Mit dem Absenden sind Sie einverstanden, dass wir Ihre Angaben zur Beantwortung Ihrer Anfrage verwenden.',
+    'Send enquiry': 'Anfrage senden',
+    'Thank you.': 'Vielen Dank.',
+    'Your enquiry is on its way. We will be in touch soon.': 'Ihre Anfrage ist unterwegs. Wir melden uns in Kürze.',
+    'Close': 'Schliessen',
+    // new pages in the menu
+    'SEO': 'SEO',
+    'GEO': 'GEO',
+    '[ ALL QUESTIONS ]': '[ ALLE FRAGEN ]',
+
+    // careers
+    '[ JOIN WEB BETTER ]': '[ TEIL VON WEB BETTER WERDEN ]',
+    'We are always looking for talented designers, developers and sales agents who want to build what\'s next.': 'Wir suchen immer talentierte Designerinnen und Designer, Entwicklerinnen und Entwickler sowie Sales Agents, die das Nächste mitgestalten wollen.',
+    'Designers': 'Design',
+    'Developers': 'Entwicklung',
+    'Sales agents': 'Sales',
+    'I am applying as': 'Ich bewerbe mich als',
+    'Designer': 'Design',
+    'Developer': 'Entwicklung',
+    'Sales agent': 'Sales Agent',
+    'Other': 'Andere',
+    'Portfolio or LinkedIn': 'Portfolio oder LinkedIn',
+    'Upload your CV': 'Lebenslauf hochladen',
+    'PDF or Word, max. 3 MB': 'PDF oder Word, max. 3 MB',
+    'Why do you want to work with us? *': 'Warum möchten Sie bei uns arbeiten? *',
+    'By sending, you agree that we use your details and CV to assess your application.': 'Mit dem Absenden sind Sie einverstanden, dass wir Ihre Angaben und Ihren Lebenslauf zur Prüfung Ihrer Bewerbung verwenden.',
+    'Send application': 'Bewerbung senden',
+    'Your application is on its way. We will be in touch.': 'Ihre Bewerbung ist unterwegs. Wir melden uns bei Ihnen.',
+    'Careers': 'Karriere',
+
+    // legal
+    'COPYRIGHT © 2026 WB SOLUTIONS. ALL RIGHTS RESERVED. WEB BETTER IS A BRAND OF WB SOLUTIONS.': 'COPYRIGHT © 2026 WB SOLUTIONS. ALLE RECHTE VORBEHALTEN. WEB BETTER IST EINE MARKE DER WB SOLUTIONS.',
+    'PRIVACY POLICY': 'DATENSCHUTZ',
+    'COOKIE SETTINGS': 'COOKIE-EINSTELLUNGEN',
+
     // attributes
     'Web Better home': 'Web Better Startseite',
     'Toggle night mode': 'Nachtmodus umschalten',
@@ -246,7 +299,12 @@
   try { saved = localStorage.getItem('webbetter-lang'); } catch (e) {}
   const q = new URLSearchParams(location.search).get('lang');
   const bot = /bot|crawl|spider|slurp|preview|lighthouse|headless/i.test(navigator.userAgent);
-  const go = l => { location.href = (l === 'de' ? '/de/' : '/') + location.hash; };
+  const twin = l => {
+    const path = location.pathname.replace(/index\.html$/, '');
+    if (l === 'de') return path.startsWith('/de/') ? path : '/de' + path;
+    return path.replace(/^\/de(\/|$)/, '/');
+  };
+  const go = l => { location.href = twin(l) + location.hash; };
   if (!onDe && q === 'de') { try { localStorage.setItem('webbetter-lang', 'de'); } catch (e) {} go('de'); }
   else if (!onDe && !q && !bot && (saved === 'de' || (!saved && (navigator.language || '').toLowerCase().startsWith('de')))) { go('de'); }
 

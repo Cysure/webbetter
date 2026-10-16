@@ -1,98 +1,446 @@
 [
  {
-  "en": ["What does Web Better do?",
-         "Web Better is a design and development studio for modern companies. We design brands and interfaces, build websites and apps, and make them visible in Google and in AI assistants through SEO and GEO."],
-  "de": ["Was macht Web Better?",
-         "Web Better ist ein Design- und Entwicklungsstudio für moderne Unternehmen. Wir gestalten Marken und Interfaces, bauen Websites und Apps und machen sie mit SEO und GEO sichtbar, bei Google und in KI-Assistenten."]
+  "en": [
+   "What does Web Better do?",
+   "Web Better is a design and development studio for modern companies. We design brands and interfaces, build websites and apps, and make them visible in Google and in AI assistants through SEO and GEO."
+  ],
+  "de": [
+   "Was macht Web Better?",
+   "Web Better ist ein Design- und Entwicklungsstudio für moderne Unternehmen. Wir gestalten Marken und Interfaces, bauen Websites und Apps und machen sie mit SEO und GEO sichtbar, bei Google und in KI-Assistenten."
+  ],
+  "cat": "general",
+  "home": true
  },
  {
-  "en": ["How much does a website cost?",
-         "Every project is scoped individually, based on the number of pages, features, languages and integrations. After a short call you receive a fixed proposal with clear deliverables, so there are no surprises."],
-  "de": ["Was kostet eine Website?",
-         "Jedes Projekt wird individuell offeriert, je nach Anzahl Seiten, Funktionen, Sprachen und Integrationen. Nach einem kurzen Gespräch erhalten Sie ein verbindliches Angebot mit klaren Leistungen, ohne Überraschungen."]
+  "en": [
+   "How much does a website cost?",
+   "Every project is scoped individually, based on the number of pages, features, languages and integrations. After a short call you receive a fixed proposal with clear deliverables, so there are no surprises."
+  ],
+  "de": [
+   "Was kostet eine Website?",
+   "Jedes Projekt wird individuell offeriert, je nach Anzahl Seiten, Funktionen, Sprachen und Integrationen. Nach einem kurzen Gespräch erhalten Sie ein verbindliches Angebot mit klaren Leistungen, ohne Überraschungen."
+  ],
+  "cat": "projects",
+  "home": true
  },
  {
-  "en": ["How long does it take to build a website?",
-         "A focused marketing website usually takes a few weeks from kickoff to launch. Larger platforms, online shops and apps take longer. Your proposal includes a timeline with clear milestones."],
-  "de": ["Wie lange dauert die Entwicklung einer Website?",
-         "Eine fokussierte Marketing-Website dauert meist einige Wochen vom Kickoff bis zum Launch. Grössere Plattformen, Onlineshops und Apps brauchen länger. Ihr Angebot enthält einen Zeitplan mit klaren Meilensteinen."]
+  "en": [
+   "How long does it take to build a website?",
+   "A focused marketing website usually takes a few weeks from kickoff to launch. Larger platforms, online shops and apps take longer. Your proposal includes a timeline with clear milestones."
+  ],
+  "de": [
+   "Wie lange dauert die Entwicklung einer Website?",
+   "Eine fokussierte Marketing-Website dauert meist einige Wochen vom Kickoff bis zum Launch. Grössere Plattformen, Onlineshops und Apps brauchen länger. Ihr Angebot enthält einen Zeitplan mit klaren Meilensteinen."
+  ],
+  "cat": "projects",
+  "home": true
  },
  {
-  "en": ["Which technologies and CMS do you use?",
-         "We choose the stack for each project: modern frameworks such as Next.js or Astro, a headless CMS such as Sanity, Storyblok or WordPress, and Shopify for commerce. Your team can edit content without touching code."],
-  "de": ["Welche Technologien und welches CMS verwenden Sie?",
-         "Wir wählen den Stack pro Projekt: moderne Frameworks wie Next.js oder Astro, ein Headless CMS wie Sanity, Storyblok oder WordPress und Shopify für E-Commerce. Ihr Team pflegt Inhalte, ohne Code anzufassen."]
+  "en": [
+   "Which technologies and CMS do you use?",
+   "We choose the stack for each project: modern frameworks such as Next.js or Astro, a headless CMS such as Sanity, Storyblok or WordPress, and Shopify for commerce. Your team can edit content without touching code."
+  ],
+  "de": [
+   "Welche Technologien und welches CMS verwenden Sie?",
+   "Wir wählen den Stack pro Projekt: moderne Frameworks wie Next.js oder Astro, ein Headless CMS wie Sanity, Storyblok oder WordPress und Shopify für E-Commerce. Ihr Team pflegt Inhalte, ohne Code anzufassen."
+  ],
+  "cat": "build",
+  "home": false
  },
  {
-  "en": ["Will my website work on mobile and be accessible?",
-         "Yes. Every site is designed mobile-first, tested on real devices and built to the WCAG accessibility guidelines, so it works for every visitor and every screen size."],
-  "de": ["Funktioniert meine Website auf dem Smartphone und ist sie barrierefrei?",
-         "Ja. Jede Website wird Mobile-first gestaltet, auf echten Geräten getestet und nach den WCAG-Richtlinien für Barrierefreiheit gebaut, damit sie für alle Besucher und jede Bildschirmgrösse funktioniert."]
+  "en": [
+   "Will my website work on mobile and be accessible?",
+   "Yes. Every site is designed mobile-first, tested on real devices and built to the WCAG accessibility guidelines, so it works for every visitor and every screen size."
+  ],
+  "de": [
+   "Funktioniert meine Website auf dem Smartphone und ist sie barrierefrei?",
+   "Ja. Jede Website wird Mobile-first gestaltet, auf echten Geräten getestet und nach den WCAG-Richtlinien für Barrierefreiheit gebaut, damit sie für alle Besucher und jede Bildschirmgrösse funktioniert."
+  ],
+  "cat": "build",
+  "home": false
  },
  {
-  "en": ["Can you redesign my existing website without losing Google rankings?",
-         "Yes. We map every existing URL, set up 301 redirects, carry over titles, descriptions and structured data, and monitor Google Search Console after launch, so your rankings move up, not down."],
-  "de": ["Können Sie meine bestehende Website neu gestalten, ohne Google-Rankings zu verlieren?",
-         "Ja. Wir erfassen jede bestehende URL, richten 301-Weiterleitungen ein, übernehmen Titel, Beschreibungen und strukturierte Daten und überwachen nach dem Launch die Google Search Console, damit Ihre Rankings steigen statt sinken."]
+  "en": [
+   "Can you redesign my existing website without losing Google rankings?",
+   "Yes. We map every existing URL, set up 301 redirects, carry over titles, descriptions and structured data, and monitor Google Search Console after launch, so your rankings move up, not down."
+  ],
+  "de": [
+   "Können Sie meine bestehende Website neu gestalten, ohne Google-Rankings zu verlieren?",
+   "Ja. Wir erfassen jede bestehende URL, richten 301-Weiterleitungen ein, übernehmen Titel, Beschreibungen und strukturierte Daten und überwachen nach dem Launch die Google Search Console, damit Ihre Rankings steigen statt sinken."
+  ],
+  "cat": "seo",
+  "home": true
  },
  {
-  "en": ["Do you offer hosting, maintenance and support?",
-         "Yes. We deploy on fast global hosting such as Vercel and offer ongoing care: updates, security, backups, performance checks and continuous improvements."],
-  "de": ["Bieten Sie Hosting, Wartung und Support an?",
-         "Ja. Wir veröffentlichen auf schnellem, globalem Hosting wie Vercel und bieten laufende Betreuung: Updates, Sicherheit, Backups, Performance-Checks und kontinuierliche Verbesserungen."]
+  "en": [
+   "Do you offer hosting, maintenance and support?",
+   "Yes. We deploy on fast global hosting such as Vercel and offer ongoing care: updates, security, backups, performance checks and continuous improvements."
+  ],
+  "de": [
+   "Bieten Sie Hosting, Wartung und Support an?",
+   "Ja. Wir veröffentlichen auf schnellem, globalem Hosting wie Vercel und bieten laufende Betreuung: Updates, Sicherheit, Backups, Performance-Checks und kontinuierliche Verbesserungen."
+  ],
+  "cat": "projects",
+  "home": false
  },
  {
-  "en": ["Can you build an online shop?",
-         "Yes. We design and build e-commerce on Shopify or custom headless stacks, including product pages that rank, fast checkout and integrations with payments, inventory and marketing tools."],
-  "de": ["Können Sie einen Onlineshop bauen?",
-         "Ja. Wir gestalten und entwickeln E-Commerce auf Shopify oder individuellen Headless-Stacks, mit Produktseiten, die ranken, schnellem Checkout und Integrationen für Zahlung, Lager und Marketing-Tools."]
+  "en": [
+   "Can you build an online shop?",
+   "Yes. We design and build e-commerce on Shopify or custom headless stacks, including product pages that rank, fast checkout and integrations with payments, inventory and marketing tools."
+  ],
+  "de": [
+   "Können Sie einen Onlineshop bauen?",
+   "Ja. Wir gestalten und entwickeln E-Commerce auf Shopify oder individuellen Headless-Stacks, mit Produktseiten, die ranken, schnellem Checkout und Integrationen für Zahlung, Lager und Marketing-Tools."
+  ],
+  "cat": "build",
+  "home": false
  },
  {
-  "en": ["Will my website respect GDPR and Swiss data protection?",
-         "We build privacy-first: consent only where it is needed, privacy-friendly analytics and a setup aligned with the GDPR and the Swiss Federal Act on Data Protection (FADP). Legal texts such as your privacy policy should be reviewed by your legal advisor."],
-  "de": ["Entspricht meine Website der DSGVO und dem Schweizer Datenschutz?",
-         "Wir bauen datenschutzfreundlich: Einwilligung nur, wo nötig, datensparsame Analytics und ein Setup im Einklang mit der DSGVO und dem Schweizer Datenschutzgesetz (DSG). Rechtstexte wie Ihre Datenschutzerklärung sollten von Ihrer Rechtsberatung geprüft werden."]
+  "en": [
+   "Will my website respect GDPR and Swiss data protection?",
+   "We build privacy-first: consent only where it is needed, privacy-friendly analytics and a setup aligned with the GDPR and the Swiss Federal Act on Data Protection (FADP). Legal texts such as your privacy policy should be reviewed by your legal advisor."
+  ],
+  "de": [
+   "Entspricht meine Website der DSGVO und dem Schweizer Datenschutz?",
+   "Wir bauen datenschutzfreundlich: Einwilligung nur, wo nötig, datensparsame Analytics und ein Setup im Einklang mit der DSGVO und dem Schweizer Datenschutzgesetz (DSG). Rechtstexte wie Ihre Datenschutzerklärung sollten von Ihrer Rechtsberatung geprüft werden."
+  ],
+  "cat": "build",
+  "home": false
  },
  {
-  "en": ["What is GEO (generative engine optimization)?",
-         "GEO is the practice of making a website easy for AI assistants such as ChatGPT, Perplexity, Gemini, Copilot and Claude to read, trust and quote. It combines clear entities, citable facts, structured data and files like llms.txt, so your brand is cited inside AI answers."],
-  "de": ["Was ist GEO (Generative Engine Optimization)?",
-         "GEO sorgt dafür, dass KI-Assistenten wie ChatGPT, Perplexity, Gemini, Copilot und Claude eine Website leicht lesen, ihr vertrauen und sie zitieren können. Dazu gehören klare Entitäten, zitierfähige Fakten, strukturierte Daten und Dateien wie llms.txt, damit Ihre Marke in KI-Antworten genannt wird."]
+  "en": [
+   "What is GEO (generative engine optimization)?",
+   "GEO is the practice of making a website easy for AI assistants such as ChatGPT, Perplexity, Gemini, Copilot and Claude to read, trust and quote. It combines clear entities, citable facts, structured data and files like llms.txt, so your brand is cited inside AI answers."
+  ],
+  "de": [
+   "Was ist GEO (Generative Engine Optimization)?",
+   "GEO sorgt dafür, dass KI-Assistenten wie ChatGPT, Perplexity, Gemini, Copilot und Claude eine Website leicht lesen, ihr vertrauen und sie zitieren können. Dazu gehören klare Entitäten, zitierfähige Fakten, strukturierte Daten und Dateien wie llms.txt, damit Ihre Marke in KI-Antworten genannt wird."
+  ],
+  "cat": "geo",
+  "home": true
  },
  {
-  "en": ["How is GEO different from SEO?",
-         "SEO earns a ranking in a list of links. GEO earns a mention inside the answer itself. Both need a fast, well-structured site, but GEO adds a focus on facts, sources and entities that language models can verify and cite."],
-  "de": ["Worin unterscheidet sich GEO von SEO?",
-         "SEO bringt Sie in eine Liste von Links. GEO bringt Sie in die Antwort selbst. Beides braucht eine schnelle, gut strukturierte Website, GEO setzt aber zusätzlich auf Fakten, Quellen und Entitäten, die Sprachmodelle prüfen und zitieren können."]
+  "en": [
+   "How is GEO different from SEO?",
+   "SEO earns a ranking in a list of links. GEO earns a mention inside the answer itself. Both need a fast, well-structured site, but GEO adds a focus on facts, sources and entities that language models can verify and cite."
+  ],
+  "de": [
+   "Worin unterscheidet sich GEO von SEO?",
+   "SEO bringt Sie in eine Liste von Links. GEO bringt Sie in die Antwort selbst. Beides braucht eine schnelle, gut strukturierte Website, GEO setzt aber zusätzlich auf Fakten, Quellen und Entitäten, die Sprachmodelle prüfen und zitieren können."
+  ],
+  "cat": "geo",
+  "home": true
  },
  {
-  "en": ["How do you measure SEO and GEO results?",
-         "We track rankings, clicks and impressions in Google Search Console, conversions in analytics, Core Web Vitals from real users, and how often AI assistants mention and cite your brand for the questions your customers ask."],
-  "de": ["Wie messen Sie SEO- und GEO-Erfolge?",
-         "Wir verfolgen Rankings, Klicks und Impressionen in der Google Search Console, Conversions in Analytics, Core Web Vitals echter Nutzer und wie oft KI-Assistenten Ihre Marke bei den Fragen Ihrer Kundschaft nennen und zitieren."]
+  "en": [
+   "How do you measure SEO and GEO results?",
+   "We track rankings, clicks and impressions in Google Search Console, conversions in analytics, Core Web Vitals from real users, and how often AI assistants mention and cite your brand for the questions your customers ask."
+  ],
+  "de": [
+   "Wie messen Sie SEO- und GEO-Erfolge?",
+   "Wir verfolgen Rankings, Klicks und Impressionen in der Google Search Console, Conversions in Analytics, Core Web Vitals echter Nutzer und wie oft KI-Assistenten Ihre Marke bei den Fragen Ihrer Kundschaft nennen und zitieren."
+  ],
+  "cat": "seo",
+  "home": false
  },
  {
-  "en": ["How fast will my new website be?",
-         "We design and build for green Core Web Vitals on real devices: fast loading, no layout shift and quick responses to every tap. The live numbers in the footer of this page are measured in your browser right now."],
-  "de": ["Wie schnell wird meine neue Website?",
-         "Wir gestalten und entwickeln für grüne Core Web Vitals auf echten Geräten: schnelles Laden, keine Layoutsprünge und flinke Reaktion auf jede Eingabe. Die Live-Werte im Footer dieser Seite werden gerade in Ihrem Browser gemessen."]
+  "en": [
+   "How fast will my new website be?",
+   "We design and build for green Core Web Vitals on real devices: fast loading, no layout shift and quick responses to every tap. The live numbers in the footer of this page are measured in your browser right now."
+  ],
+  "de": [
+   "Wie schnell wird meine neue Website?",
+   "Wir gestalten und entwickeln für grüne Core Web Vitals auf echten Geräten: schnelles Laden, keine Layoutsprünge und flinke Reaktion auf jede Eingabe. Die Live-Werte im Footer dieser Seite werden gerade in Ihrem Browser gemessen."
+  ],
+  "cat": "perf",
+  "home": false
  },
  {
-  "en": ["Do you build websites in English and German?",
-         "Yes. We build multilingual sites with real language versions, hreflang and translated metadata, so each audience and each search engine gets the right page."],
-  "de": ["Bauen Sie Websites auf Englisch und Deutsch?",
-         "Ja. Wir bauen mehrsprachige Websites mit echten Sprachversionen, hreflang und übersetzten Metadaten, damit jedes Publikum und jede Suchmaschine die richtige Seite erhält."]
+  "en": [
+   "Do you build websites in English and German?",
+   "Yes. We build multilingual sites with real language versions, hreflang and translated metadata, so each audience and each search engine gets the right page."
+  ],
+  "de": [
+   "Bauen Sie Websites auf Englisch und Deutsch?",
+   "Ja. Wir bauen mehrsprachige Websites mit echten Sprachversionen, hreflang und übersetzten Metadaten, damit jedes Publikum und jede Suchmaschine die richtige Seite erhält."
+  ],
+  "cat": "general",
+  "home": false
  },
  {
-  "en": ["Can I update the website content myself?",
-         "Yes. We set up an editor that fits your team, with reusable blocks, previews and roles, and we train your team at handover."],
-  "de": ["Kann ich die Inhalte der Website selbst bearbeiten?",
-         "Ja. Wir richten einen Editor ein, der zu Ihrem Team passt, mit wiederverwendbaren Bausteinen, Vorschau und Rollen, und schulen Ihr Team bei der Übergabe."]
+  "en": [
+   "Can I update the website content myself?",
+   "Yes. We set up an editor that fits your team, with reusable blocks, previews and roles, and we train your team at handover."
+  ],
+  "de": [
+   "Kann ich die Inhalte der Website selbst bearbeiten?",
+   "Ja. Wir richten einen Editor ein, der zu Ihrem Team passt, mit wiederverwendbaren Bausteinen, Vorschau und Rollen, und schulen Ihr Team bei der Übergabe."
+  ],
+  "cat": "build",
+  "home": false
  },
  {
-  "en": ["How do I start a project with Web Better?",
-         "Write to hello@webbetter.ch with your goals and timeline. Every project is scoped individually, and you receive a clear proposal."],
-  "de": ["Wie starte ich ein Projekt mit Web Better?",
-         "Schreiben Sie an hello@webbetter.ch mit Ihren Zielen und Ihrem Zeitplan. Jedes Projekt wird individuell offeriert, und Sie erhalten ein klares Angebot."]
+  "en": [
+   "How do I start a project with Web Better?",
+   "Write to beratung@webbetter.ch with your goals and timeline. Every project is scoped individually, and you receive a clear proposal."
+  ],
+  "de": [
+   "Wie starte ich ein Projekt mit Web Better?",
+   "Schreiben Sie an beratung@webbetter.ch mit Ihren Zielen und Ihrem Zeitplan. Jedes Projekt wird individuell offeriert, und Sie erhalten ein klares Angebot."
+  ],
+  "cat": "general",
+  "home": false
+ },
+ {
+  "en": [
+   "How long does SEO take to show results?",
+   "Technical fixes are often picked up within weeks of being crawled. Rankings for competitive terms usually build over several months, which is why we set clear milestones and report progress monthly."
+  ],
+  "de": [
+   "Wie lange dauert es, bis SEO Wirkung zeigt?",
+   "Technische Verbesserungen werden oft innerhalb weniger Wochen nach dem Crawling berücksichtigt. Rankings für umkämpfte Begriffe bauen sich meist über mehrere Monate auf. Deshalb setzen wir klare Meilensteine und berichten monatlich über den Fortschritt."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "What is technical SEO?",
+   "Technical SEO makes sure search engines can crawl, render and understand every page: clean URLs, sitemaps, canonical tags, hreflang, structured data, fast loading and no broken links or redirect chains."
+  ],
+  "de": [
+   "Was ist technisches SEO?",
+   "Technisches SEO stellt sicher, dass Suchmaschinen jede Seite crawlen, darstellen und verstehen können: saubere URLs, Sitemaps, Canonical-Tags, hreflang, strukturierte Daten, schnelles Laden und keine defekten Links oder Weiterleitungsketten."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "Do you do local SEO for businesses in Switzerland?",
+   "Yes. We optimise for searches in Swiss German regions and beyond, with correct language versions, local business details, consistent company profiles and content that answers local questions."
+  ],
+  "de": [
+   "Machen Sie lokales SEO für Unternehmen in der Schweiz?",
+   "Ja. Wir optimieren für Suchen in der Deutschschweiz und darüber hinaus, mit korrekten Sprachversionen, lokalen Unternehmensangaben, einheitlichen Firmenprofilen und Inhalten, die lokale Fragen beantworten."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "Do you write the content as well?",
+   "Yes. We create content briefs from real search intent, write or edit pages and articles, and connect them with internal links so every page has a clear job."
+  ],
+  "de": [
+   "Schreiben Sie auch die Inhalte?",
+   "Ja. Wir erstellen Content-Briefings auf Basis echter Suchintention, schreiben oder überarbeiten Seiten und Artikel und verbinden sie mit internen Links, damit jede Seite eine klare Aufgabe hat."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "Can you guarantee that my brand appears in ChatGPT or Google?",
+   "No one can honestly guarantee placements, because each search engine and AI assistant decides for itself. What we guarantee is the work: a site that is fast, structured, factual and easy for every engine to read, trust and cite, plus transparent tracking of the results."
+  ],
+  "de": [
+   "Können Sie garantieren, dass meine Marke in ChatGPT oder bei Google erscheint?",
+   "Niemand kann Platzierungen seriös garantieren, denn jede Suchmaschine und jeder KI-Assistent entscheidet selbst. Garantieren können wir die Arbeit: eine Website, die schnell, strukturiert und faktenbasiert ist und von jeder Suchmaschine leicht gelesen, als vertrauenswürdig eingestuft und zitiert werden kann, dazu transparentes Tracking der Ergebnisse."
+  ],
+  "cat": "geo",
+  "home": false
+ },
+ {
+  "en": [
+   "What is llms.txt?",
+   "llms.txt is a short plain-text file at the root of a website that summarises who you are, what you offer and which pages matter most, in a format language models can read quickly. We create and maintain it as part of GEO."
+  ],
+  "de": [
+   "Was ist llms.txt?",
+   "llms.txt ist eine kurze Textdatei im Stammverzeichnis einer Website. Sie fasst zusammen, wer Sie sind, was Sie anbieten und welche Seiten am wichtigsten sind, in einem Format, das Sprachmodelle schnell lesen können. Wir erstellen und pflegen sie als Teil von GEO."
+  ],
+  "cat": "geo",
+  "home": false
+ },
+ {
+  "en": [
+   "Which AI assistants do you optimise for?",
+   "ChatGPT, Perplexity, Google Gemini and AI Overviews, Microsoft Copilot and Claude. They source answers differently, so we cover both the Google and Bing indexes and the AI crawlers themselves."
+  ],
+  "de": [
+   "Für welche KI-Assistenten optimieren Sie?",
+   "ChatGPT, Perplexity, Google Gemini und AI Overviews, Microsoft Copilot und Claude. Sie beziehen Antworten unterschiedlich, deshalb decken wir sowohl die Indizes von Google und Bing als auch die KI-Crawler selbst ab."
+  ],
+  "cat": "geo",
+  "home": false
+ },
+ {
+  "en": [
+   "What do you need from us to start?",
+   "Your goals, a contact person, access to your current website, analytics and Search Console if they exist, and your brand assets. We take care of the rest and keep the process clear and short."
+  ],
+  "de": [
+   "Was brauchen Sie von uns, um zu starten?",
+   "Ihre Ziele, eine Ansprechperson, Zugang zur aktuellen Website, zu Analytics und zur Search Console, falls vorhanden, sowie Ihre Markenunterlagen. Um den Rest kümmern wir uns, mit einem klaren und kurzen Prozess."
+  ],
+  "cat": "projects",
+  "home": false
+ },
+ {
+  "en": [
+   "What are Core Web Vitals?",
+   "Core Web Vitals are Google's measurements of real user experience: Largest Contentful Paint (how fast the main content appears, good under 2.5 seconds), Interaction to Next Paint (how quickly the page responds, good under 200 milliseconds) and Cumulative Layout Shift (how stable the layout is, good under 0.1). They are part of how Google evaluates pages."
+  ],
+  "de": [
+   "Was sind Core Web Vitals?",
+   "Core Web Vitals sind die Messwerte von Google für das echte Nutzererlebnis: Largest Contentful Paint (wie schnell der Hauptinhalt erscheint, gut unter 2,5 Sekunden), Interaction to Next Paint (wie schnell die Seite reagiert, gut unter 200 Millisekunden) und Cumulative Layout Shift (wie stabil das Layout ist, gut unter 0,1). Sie fliessen in die Bewertung von Seiten durch Google ein."
+  ],
+  "cat": "perf",
+  "home": false
+ },
+ {
+  "en": [
+   "How do you make a website faster?",
+   "We render content on the server, optimise and lazy-load images, subset and preload fonts, remove unused JavaScript and CSS, cache at the edge on a global network and measure every release against Core Web Vitals."
+  ],
+  "de": [
+   "Wie machen Sie eine Website schneller?",
+   "Wir rendern Inhalte serverseitig, optimieren Bilder und laden sie verzögert, reduzieren und laden Schriften vor, entfernen ungenutztes JavaScript und CSS, cachen am Edge eines globalen Netzwerks und messen jedes Release an den Core Web Vitals."
+  ],
+  "cat": "perf",
+  "home": false
+ },
+ {
+  "en": [
+   "Why does page speed matter for SEO and sales?",
+   "Fast pages rank better, keep visitors longer and convert more of them into customers. Speed also lowers advertising costs, because landing page experience affects ad quality scores."
+  ],
+  "de": [
+   "Warum ist Ladegeschwindigkeit wichtig für SEO und Umsatz?",
+   "Schnelle Seiten ranken besser, halten Besucher länger und verwandeln mehr von ihnen in Kundschaft. Geschwindigkeit senkt ausserdem Werbekosten, weil das Erlebnis auf der Zielseite die Qualitätsbewertung von Anzeigen beeinflusst."
+  ],
+  "cat": "perf",
+  "home": false
+ },
+ {
+  "en": [
+   "What is conversion rate optimisation (CRO)?",
+   "CRO means improving the share of visitors who take action, such as sending an enquiry or buying. We use analytics, clear page structure, stronger calls to action and A/B tests to turn more of your existing traffic into results."
+  ],
+  "de": [
+   "Was ist Conversion-Rate-Optimierung (CRO)?",
+   "CRO bedeutet, den Anteil der Besucher zu erhöhen, die handeln, etwa eine Anfrage senden oder kaufen. Mit Analytics, klarer Seitenstruktur, stärkeren Handlungsaufforderungen und A/B-Tests machen wir aus Ihrem bestehenden Traffic mehr Ergebnisse."
+  ],
+  "cat": "perf",
+  "home": false
+ },
+ {
+  "en": [
+   "How do images affect website performance?",
+   "Images are usually the heaviest part of a page. We serve modern formats such as WebP and AVIF, size every image for the screen it appears on, lazy-load what is below the fold and always add descriptive alt text for accessibility and search."
+  ],
+  "de": [
+   "Wie beeinflussen Bilder die Performance einer Website?",
+   "Bilder sind meist der schwerste Teil einer Seite. Wir liefern moderne Formate wie WebP und AVIF, passen jedes Bild an die Bildschirmgrösse an, laden Bilder unterhalb des sichtbaren Bereichs verzögert und ergänzen immer aussagekräftige Alt-Texte für Barrierefreiheit und Suche."
+  ],
+  "cat": "perf",
+  "home": false
+ },
+ {
+  "en": [
+   "What is structured data (schema markup)?",
+   "Structured data is code that describes your content to machines in the schema.org vocabulary: who your organisation is, which services you offer, your FAQs and more. It helps Google show rich results and helps AI assistants understand and cite your facts correctly."
+  ],
+  "de": [
+   "Was sind strukturierte Daten (Schema-Markup)?",
+   "Strukturierte Daten sind Code, der Ihre Inhalte für Maschinen im schema.org-Vokabular beschreibt: wer Ihre Organisation ist, welche Leistungen Sie anbieten, Ihre FAQ und mehr. Das hilft Google, Rich Results anzuzeigen, und KI-Assistenten, Ihre Fakten richtig zu verstehen und zu zitieren."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "What is hreflang and do I need it?",
+   "hreflang tells search engines which language version of a page to show to which user. If your website exists in more than one language, for example German and English, you need it so each visitor and each country sees the right page."
+  ],
+  "de": [
+   "Was ist hreflang und brauche ich das?",
+   "hreflang zeigt Suchmaschinen, welche Sprachversion einer Seite welchem Nutzer angezeigt werden soll. Wenn Ihre Website in mehr als einer Sprache existiert, zum Beispiel Deutsch und Englisch, brauchen Sie es, damit jede Besucherin und jedes Land die richtige Seite sieht."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "Do backlinks still matter for SEO?",
+   "Yes. Links and mentions from relevant, trusted websites remain strong signals for Google and for AI assistants. We focus on earning them through useful content, partnerships and digital PR rather than buying them."
+  ],
+  "de": [
+   "Sind Backlinks für SEO noch wichtig?",
+   "Ja. Links und Erwähnungen von relevanten, vertrauenswürdigen Websites bleiben starke Signale für Google und für KI-Assistenten. Wir setzen darauf, sie mit nützlichen Inhalten, Partnerschaften und digitaler PR zu verdienen, statt sie zu kaufen."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "Is SEO a one-time project?",
+   "The technical foundation is built once and then maintained. Rankings, content and competitors keep moving, so the best results come from steady monthly work on content, links and performance."
+  ],
+  "de": [
+   "Ist SEO ein einmaliges Projekt?",
+   "Das technische Fundament wird einmal gebaut und dann gepflegt. Rankings, Inhalte und Mitbewerber verändern sich laufend, deshalb entstehen die besten Ergebnisse durch kontinuierliche monatliche Arbeit an Inhalten, Links und Performance."
+  ],
+  "cat": "seo",
+  "home": false
+ },
+ {
+  "en": [
+   "How can I check whether AI assistants mention my brand?",
+   "Ask ChatGPT, Perplexity, Gemini, Copilot and Claude the questions your customers would ask, and note whether your brand is named or cited. We run this check systematically across many questions and track the results every month."
+  ],
+  "de": [
+   "Wie prüfe ich, ob KI-Assistenten meine Marke nennen?",
+   "Stellen Sie ChatGPT, Perplexity, Gemini, Copilot und Claude die Fragen, die Ihre Kundschaft stellen würde, und notieren Sie, ob Ihre Marke genannt oder zitiert wird. Wir führen diese Prüfung systematisch über viele Fragen durch und verfolgen die Ergebnisse jeden Monat."
+  ],
+  "cat": "geo",
+  "home": false
+ },
+ {
+  "en": [
+   "Should I allow or block AI crawlers?",
+   "If you want to be found and cited in AI answers, allow them. Blocking crawlers such as GPTBot, OAI-SearchBot, PerplexityBot or ClaudeBot can remove your content from those assistants. webbetter.ch allows them all in its robots.txt."
+  ],
+  "de": [
+   "Soll ich KI-Crawler zulassen oder blockieren?",
+   "Wenn Sie in KI-Antworten gefunden und zitiert werden wollen, lassen Sie sie zu. Das Blockieren von Crawlern wie GPTBot, OAI-SearchBot, PerplexityBot oder ClaudeBot kann Ihre Inhalte aus diesen Assistenten entfernen. webbetter.ch lässt sie in der robots.txt alle zu."
+  ],
+  "cat": "geo",
+  "home": false
+ },
+ {
+  "en": [
+   "Does GEO replace SEO?",
+   "No. GEO builds on SEO. Most AI assistants retrieve pages from search indexes such as Google and Bing, so a fast, well-ranked, well-structured website remains the foundation for being cited."
+  ],
+  "de": [
+   "Ersetzt GEO das SEO?",
+   "Nein. GEO baut auf SEO auf. Die meisten KI-Assistenten beziehen Seiten aus Suchindizes wie Google und Bing, deshalb bleibt eine schnelle, gut rankende und gut strukturierte Website das Fundament, um zitiert zu werden."
+  ],
+  "cat": "geo",
+  "home": false
+ },
+ {
+  "en": [
+   "How do Google AI Overviews choose their sources?",
+   "AI Overviews draw on pages from Google's index that answer the question clearly and are considered helpful and reliable. Strong SEO, clear answers near the top of the page and structured data all improve the chance of being included."
+  ],
+  "de": [
+   "Wie wählen Google AI Overviews ihre Quellen?",
+   "AI Overviews nutzen Seiten aus dem Google-Index, die die Frage klar beantworten und als hilfreich und zuverlässig gelten. Starkes SEO, klare Antworten weit oben auf der Seite und strukturierte Daten erhöhen die Chance, berücksichtigt zu werden."
+  ],
+  "cat": "geo",
+  "home": false
  }
 ]

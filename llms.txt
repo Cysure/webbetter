@@ -1,6 +1,6 @@
 # Web Better
 
-> Web Better (webbetter.ch) is a design and development studio for modern companies. It designs brands and interfaces, builds fast websites and apps, and makes companies visible in Google and in AI assistants through SEO and GEO (generative engine optimization). Contact: hello@webbetter.ch. Languages: English and German.
+> Web Better (webbetter.ch) is a design and development studio for modern companies. It designs brands and interfaces, builds fast websites and apps, and makes companies visible in Google and in AI assistants through SEO and GEO (generative engine optimization). Contact: beratung@webbetter.ch. Languages: English and German.
 
 ## Services
 
@@ -18,6 +18,9 @@
 
 - [Home (English)](https://webbetter.ch/): services, work, FAQ and contact.
 - [Startseite (Deutsch)](https://webbetter.ch/de/): German version of the site.
+- [SEO services](https://webbetter.ch/seo/): technical SEO, content, structured data and Core Web Vitals.
+- [GEO services](https://webbetter.ch/geo/): generative engine optimization for ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude.
+- [FAQ](https://webbetter.ch/faq/): answers on websites, costs, timelines, SEO, GEO and website optimisation.
 - [Full text for language models](https://webbetter.ch/llms-full.txt): services and every FAQ answer in plain text.
 
 ## FAQ
@@ -37,9 +40,30 @@
 - How fast will my new website be? We design and build for green Core Web Vitals on real devices: fast loading, no layout shift and quick responses to every tap. The live numbers in the footer of this page are measured in your browser right now.
 - Do you build websites in English and German? Yes. We build multilingual sites with real language versions, hreflang and translated metadata, so each audience and each search engine gets the right page.
 - Can I update the website content myself? Yes. We set up an editor that fits your team, with reusable blocks, previews and roles, and we train your team at handover.
-- How do I start a project with Web Better? Write to hello@webbetter.ch with your goals and timeline. Every project is scoped individually, and you receive a clear proposal.
+- How do I start a project with Web Better? Write to beratung@webbetter.ch with your goals and timeline. Every project is scoped individually, and you receive a clear proposal.
+- How long does SEO take to show results? Technical fixes are often picked up within weeks of being crawled. Rankings for competitive terms usually build over several months, which is why we set clear milestones and report progress monthly.
+- What is technical SEO? Technical SEO makes sure search engines can crawl, render and understand every page: clean URLs, sitemaps, canonical tags, hreflang, structured data, fast loading and no broken links or redirect chains.
+- Do you do local SEO for businesses in Switzerland? Yes. We optimise for searches in Swiss German regions and beyond, with correct language versions, local business details, consistent company profiles and content that answers local questions.
+- Do you write the content as well? Yes. We create content briefs from real search intent, write or edit pages and articles, and connect them with internal links so every page has a clear job.
+- Can you guarantee that my brand appears in ChatGPT or Google? No one can honestly guarantee placements, because each search engine and AI assistant decides for itself. What we guarantee is the work: a site that is fast, structured, factual and easy for every engine to read, trust and cite, plus transparent tracking of the results.
+- What is llms.txt? llms.txt is a short plain-text file at the root of a website that summarises who you are, what you offer and which pages matter most, in a format language models can read quickly. We create and maintain it as part of GEO.
+- Which AI assistants do you optimise for? ChatGPT, Perplexity, Google Gemini and AI Overviews, Microsoft Copilot and Claude. They source answers differently, so we cover both the Google and Bing indexes and the AI crawlers themselves.
+- What do you need from us to start? Your goals, a contact person, access to your current website, analytics and Search Console if they exist, and your brand assets. We take care of the rest and keep the process clear and short.
+- What are Core Web Vitals? Core Web Vitals are Google's measurements of real user experience: Largest Contentful Paint (how fast the main content appears, good under 2.5 seconds), Interaction to Next Paint (how quickly the page responds, good under 200 milliseconds) and Cumulative Layout Shift (how stable the layout is, good under 0.1). They are part of how Google evaluates pages.
+- How do you make a website faster? We render content on the server, optimise and lazy-load images, subset and preload fonts, remove unused JavaScript and CSS, cache at the edge on a global network and measure every release against Core Web Vitals.
+- Why does page speed matter for SEO and sales? Fast pages rank better, keep visitors longer and convert more of them into customers. Speed also lowers advertising costs, because landing page experience affects ad quality scores.
+- What is conversion rate optimisation (CRO)? CRO means improving the share of visitors who take action, such as sending an enquiry or buying. We use analytics, clear page structure, stronger calls to action and A/B tests to turn more of your existing traffic into results.
+- How do images affect website performance? Images are usually the heaviest part of a page. We serve modern formats such as WebP and AVIF, size every image for the screen it appears on, lazy-load what is below the fold and always add descriptive alt text for accessibility and search.
+- What is structured data (schema markup)? Structured data is code that describes your content to machines in the schema.org vocabulary: who your organisation is, which services you offer, your FAQs and more. It helps Google show rich results and helps AI assistants understand and cite your facts correctly.
+- What is hreflang and do I need it? hreflang tells search engines which language version of a page to show to which user. If your website exists in more than one language, for example German and English, you need it so each visitor and each country sees the right page.
+- Do backlinks still matter for SEO? Yes. Links and mentions from relevant, trusted websites remain strong signals for Google and for AI assistants. We focus on earning them through useful content, partnerships and digital PR rather than buying them.
+- Is SEO a one-time project? The technical foundation is built once and then maintained. Rankings, content and competitors keep moving, so the best results come from steady monthly work on content, links and performance.
+- How can I check whether AI assistants mention my brand? Ask ChatGPT, Perplexity, Gemini, Copilot and Claude the questions your customers would ask, and note whether your brand is named or cited. We run this check systematically across many questions and track the results every month.
+- Should I allow or block AI crawlers? If you want to be found and cited in AI answers, allow them. Blocking crawlers such as GPTBot, OAI-SearchBot, PerplexityBot or ClaudeBot can remove your content from those assistants. webbetter.ch allows them all in its robots.txt.
+- Does GEO replace SEO? No. GEO builds on SEO. Most AI assistants retrieve pages from search indexes such as Google and Bing, so a fast, well-ranked, well-structured website remains the foundation for being cited.
+- How do Google AI Overviews choose their sources? AI Overviews draw on pages from Google's index that answer the question clearly and are considered helpful and reliable. Strong SEO, clear answers near the top of the page and structured data all improve the chance of being included.
 
 ## Contact
 
-- Email: hello@webbetter.ch
+- Email: beratung@webbetter.ch
 - Website: https://webbetter.ch

@@ -213,7 +213,9 @@
 .works-cta { grid-column: 9 / span 4; }
 .work-shot { background: #050b1a; }
 .work-shot img { display: block; width: 100%; height: 112%; object-fit: cover; object-position: top center; }
-@media (max-width: 900px) { .w5, .w6 { grid-column: 1; margin-top: 0; } }
+.w7 { grid-column: 8 / span 5; margin-top: 12vw; align-self: start; }
+.w7 .work-media { aspect-ratio: 5 / 4; }
+@media (max-width: 900px) { .w5, .w6, .w7 { grid-column: 1; margin-top: 0; } }
 
 /* STAND OUT: held while the letters light up white, lines drift together */
 .standout { min-height: 0; height: 220vh; display: block; padding: 0; }

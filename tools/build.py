@@ -238,6 +238,7 @@ write('llms.txt', f'''# Web Better
 
 - [QuFi Network](https://qufi.network): protocol website for the verification layer of the post-quantum economy (website, WebGL, brand).
 - [Veyns](https://veyns.io): immersive brand site for palm-vein identity (experience, WebGL, brand).
+- [NABD](https://nabdchain.org): website for human-native Web4 infrastructure with post-quantum signatures (website, development, brand).
 
 ## Key pages
 

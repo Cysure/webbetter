@@ -58,6 +58,7 @@
     'WEBSITE': 'WEBSITE',
     'QuFi Network — protocol website': 'QuFi Network – Protokoll-Website',
     'Veyns — immersive brand site': 'Veyns – immersive Marken-Website',
+    'NABD — Web4 network website': 'NABD – Web4-Netzwerk-Website',
     'BRAND': 'MARKE',
     'EXPERIENCE': 'ERLEBNIS',
 

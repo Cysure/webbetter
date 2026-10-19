@@ -210,7 +210,7 @@ FAQP = {
 # ------------------------------------------------------------------ combined SEO & GEO page
 SEOGEO = {
  'en': {
-  'title': 'SEO & GEO Agency: Rank in Google, Get Cited by AI | Web Better',
+  'title': 'SEO & GEO Agency: Rank on Google and in AI | Web Better',
   'desc': 'SEO and GEO from Web Better (webbetter.ch): technical SEO, content and Core Web Vitals for Google and Bing, plus generative engine optimization so ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude cite your brand.',
   'crumb': 'SEO & GEO', 'kicker': 'SERVICES / SEO & GEO',
   'h1a': 'Found in search. Cited by AI.', 'h1b': 'SEO and GEO, engineered as one system.',
@@ -231,7 +231,7 @@ SEOGEO = {
   'cta_title': 'Ready to be found and cited?', 'cta_text': 'Tell us where you want to rank and which questions your customers ask. You get a clear plan and a fixed proposal.',
  },
  'de': {
-  'title': 'SEO- & GEO-Agentur: Bei Google ranken, von KI zitiert werden | Web Better',
+  'title': 'SEO- & GEO-Agentur: Google-Ranking und KI-Zitate | Web Better',
   'desc': 'SEO und GEO von Web Better (webbetter.ch): technisches SEO, Content und Core Web Vitals für Google und Bing, dazu Generative Engine Optimization, damit ChatGPT, Perplexity, Gemini, AI Overviews, Copilot und Claude Ihre Marke zitieren.',
   'crumb': 'SEO & GEO', 'kicker': 'LEISTUNGEN / SEO & GEO',
   'h1a': 'Gefunden in der Suche. Zitiert von KI.', 'h1b': 'SEO und GEO, als ein System entwickelt.',
@@ -256,7 +256,7 @@ SEOGEO = {
 # ------------------------------------------------------------------ web & app development page
 DEV = {
  'en': {
-  'title': 'Web & App Development Agency: Websites, Web Apps, iOS & Android | Web Better',
+  'title': 'Web & App Development: Websites, iOS & Android | Web Better',
   'desc': 'Web and app development from Web Better (webbetter.ch): fast websites, web apps, iOS and Android apps, e-commerce and headless CMS, designed, engineered and launched with SEO, accessibility and Core Web Vitals built in.',
   'crumb': 'Web & App Development', 'kicker': 'SERVICES / WEB & APP DEVELOPMENT',
   'h1a': 'Websites and apps that perform.', 'h1b': 'Designed, engineered and launched by one team.',
@@ -294,7 +294,7 @@ DEV = {
   'service': ('Web and app development', 'Design and development of websites, web apps, iOS and Android apps and e-commerce, with SEO, accessibility and performance built in.'),
  },
  'de': {
-  'title': 'Web- & App-Entwicklung: Websites, Web-Apps, iOS & Android | Web Better',
+  'title': 'Web- & App-Entwicklung: Websites, iOS, Android | Web Better',
   'desc': 'Web- und App-Entwicklung von Web Better (webbetter.ch): schnelle Websites, Web-Apps, iOS- und Android-Apps, E-Commerce und Headless CMS, gestaltet, entwickelt und lanciert mit SEO, Barrierefreiheit und Core Web Vitals.',
   'crumb': 'Web- & App-Entwicklung', 'kicker': 'LEISTUNGEN / WEB- & APP-ENTWICKLUNG',
   'h1a': 'Websites und Apps, die überzeugen.', 'h1b': 'Gestaltet, entwickelt und lanciert von einem Team.',

@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/",
@@ -24,11 +25,6 @@
         }
       ],
       "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/de",
-      "destination": "/de/",
       "permanent": true
     },
     {
@@ -74,26 +70,6 @@
     {
       "source": "/de/geo/",
       "destination": "/de/seo-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/seo-geo",
-      "destination": "/seo-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/web-app-development",
-      "destination": "/web-app-development/",
-      "permanent": true
-    },
-    {
-      "source": "/de/seo-geo",
-      "destination": "/de/seo-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/de/web-app-development",
-      "destination": "/de/web-app-development/",
       "permanent": true
     }
   ],

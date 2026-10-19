@@ -209,6 +209,7 @@ def url_entry(path):
     en, de_ = f'{SITE}/{path}', f'{SITE}/de/{path}'
     alts = f"""    <xhtml:link rel="alternate" hreflang="en" href="{en}"/>
     <xhtml:link rel="alternate" hreflang="de" href="{de_}"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="{de_}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="{en}"/>"""
     return ''.join(f"""  <url>
     <loc>{u}</loc>

@@ -276,6 +276,10 @@
 
     '[ SEARCH · AI ANSWERS · EVERY SCREEN ]': '[ SUCHE · KI-ANTWORTEN · JEDER BILDSCHIRM ]',
 
+    'SEO & GEO': 'SEO & GEO',
+    'Web & Apps': 'Web & Apps',
+    'Web & App Development': 'Web- & App-Entwicklung',
+
     // attributes
     'Web Better home': 'Web Better Startseite',
     'Toggle night mode': 'Nachtmodus umschalten',

@@ -15,32 +15,32 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/"/>
   </url>
   <url>
-    <loc>https://webbetter.ch/seo/</loc>
+    <loc>https://webbetter.ch/seo-geo/</loc>
     <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/seo/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/seo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/seo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/seo-geo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/seo-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/seo-geo/"/>
   </url>
   <url>
-    <loc>https://webbetter.ch/de/seo/</loc>
+    <loc>https://webbetter.ch/de/seo-geo/</loc>
     <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/seo/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/seo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/seo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/seo-geo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/seo-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/seo-geo/"/>
   </url>
   <url>
-    <loc>https://webbetter.ch/geo/</loc>
+    <loc>https://webbetter.ch/web-app-development/</loc>
     <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/geo/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/geo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/web-app-development/"/>
   </url>
   <url>
-    <loc>https://webbetter.ch/de/geo/</loc>
+    <loc>https://webbetter.ch/de/web-app-development/</loc>
     <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/geo/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/geo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://webbetter.ch/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://webbetter.ch/de/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://webbetter.ch/web-app-development/"/>
   </url>
   <url>
     <loc>https://webbetter.ch/faq/</loc>

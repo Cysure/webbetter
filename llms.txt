@@ -18,8 +18,8 @@
 
 - [Home (English)](https://webbetter.ch/): services, work, FAQ and contact.
 - [Startseite (Deutsch)](https://webbetter.ch/de/): German version of the site.
-- [SEO services](https://webbetter.ch/seo/): technical SEO, content, structured data and Core Web Vitals.
-- [GEO services](https://webbetter.ch/geo/): generative engine optimization for ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude.
+- [SEO & GEO](https://webbetter.ch/seo-geo/): technical SEO, content, structured data and Core Web Vitals, plus generative engine optimization for ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude.
+- [Web & App Development](https://webbetter.ch/web-app-development/): websites, web apps, iOS and Android apps, e-commerce and headless CMS.
 - [FAQ](https://webbetter.ch/faq/): answers on websites, costs, timelines, SEO, GEO and website optimisation.
 - [Full text for language models](https://webbetter.ch/llms-full.txt): services and every FAQ answer in plain text.
 

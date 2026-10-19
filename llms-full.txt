@@ -74,6 +74,32 @@ If the bots cannot read you, they cannot cite you. robots.txt welcoming AI crawl
 
 Process: 1. Visibility audit: We ask the questions your customers ask across ChatGPT, Perplexity, Gemini, Copilot and Claude, and record who gets cited today. 2. Entity and content fixes: We sharpen how your brand, services and facts are described, and restructure pages into clear, citable answers. 3. Technical layer: Structured data, llms.txt, AI crawler access, sitemaps and indexing in both Google and Bing. 4. Authority: Consistent profiles and relevant mentions, so the wider web confirms what your site says. 5. Monitor monthly: We repeat the questions every month and report citations, mentions and the traffic they send.
 
+## Web & App Development: Websites and apps that perform. Designed, engineered and launched by one team.
+
+From a fast marketing site to a full web app or a mobile app on iOS and Android, Web Better designs and builds digital products that load instantly, rank well, convert visitors and are easy for your team to run.
+
+### Websites
+
+Fast, beautiful marketing sites and corporate websites that rank and convert. Design system and UI; Multilingual with hreflang; Headless CMS for your team; SEO and GEO foundation.
+
+### Web apps
+
+Portals, dashboards and SaaS products that feel as fast as native software. Accounts, roles and permissions; APIs and integrations; Real-time data and dashboards; Secure, scalable backends.
+
+### Mobile apps
+
+iOS and Android apps with the polish people expect from top brands. iOS and Android from one codebase; Native features and offline mode; App Store and Play Store release; Analytics and crash reporting.
+
+### E-commerce
+
+Shops that load fast, rank well and make checkout effortless. Shopify or headless commerce; Payments, shipping and tax; Product pages that rank; Inventory and ERP integrations.
+
+### Care and growth
+
+We stay on after launch so your product keeps getting better. Updates and security patches; Monitoring and backups; Performance and SEO checks; New features in sprints.
+
+Process: 1. Discovery: Goals, users and requirements, turned into a clear scope, timeline and fixed proposal. 2. UX and design: User flows, wireframes and a design system, tested in clickable prototypes before a line of code. 3. Build: Engineering in short sprints with weekly previews, so you see progress and steer early. 4. Launch: Quality checks for speed, accessibility, SEO and security, then a smooth go-live with redirects in place. 5. Care: Monitoring, updates and continuous improvement, with your team trained to run the product.
+
 ## Frequently asked questions (English)
 
 ### What does Web Better do?

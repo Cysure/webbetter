@@ -328,3 +328,7 @@ html:not(.anim) .st-bar i { transform: scaleY(1); }
 @media (max-width: 640px) { .cs.two .cs-foot { grid-template-columns: 1fr 1fr; } }
 
 .cs h2:focus { outline: none; }
+
+/* development page: technology grid */
+.stack-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .stack-grid { grid-template-columns: 1fr; } }

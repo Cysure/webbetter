@@ -135,7 +135,8 @@
       let L = null;
       if (kind === 'seo') L = WBX.city(cv);
       else if (kind === 'geo') L = WBX.geoGlobe(cv, $('.ph-labels'));
-      if (L) layers.push(t => { if (hero.getBoundingClientRect().bottom > 0) L.render(kind === 'seo' ? t * .5 : t, kind === 'seo' ? clamp(scrollY / innerHeight) : scrollY / innerHeight * .5); });
+      else if (kind === 'dev') L = WBX.tunnel(cv);
+      if (L) layers.push(t => { if (hero.getBoundingClientRect().bottom > 0) L.render(kind === 'seo' ? t * .5 : kind === 'dev' ? t * .3 : t, kind === 'geo' ? scrollY / innerHeight * .5 : clamp(scrollY / innerHeight)); });
     }
     if (cv && (kind === 'faq' || kind === 'privacy') && window.WBGL) {
       const R = WBGL.ribbons(cv, { host: hero, count: 5, gain: .9 });

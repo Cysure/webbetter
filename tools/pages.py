@@ -1,8 +1,8 @@
 """Content and renderer for the SEO, GEO and FAQ pages (English + German).
 
 Called from tools/build.py. Each page is written twice:
-  /seo/  /geo/  /faq/          (English)
-  /de/seo/ /de/geo/ /de/faq/   (German)
+  /seo-geo/  /web-app-development/  /faq/  /privacy/          (English)
+  /de/seo-geo/  /de/web-app-development/  /de/faq/  /de/privacy/   (German)
 """
 import html, json, re
 
@@ -203,6 +203,123 @@ FAQP = {
   'search': 'Fragen durchsuchen', 'all': 'Alle', 'empty': 'Keine passende Frage. Schreiben Sie an beratung@webbetter.ch, wir beantworten sie gerne.',
   'cats': {'general': 'Über Web Better', 'projects': 'Projekte und Preise', 'build': 'Design und Entwicklung', 'seo': 'SEO', 'geo': 'GEO und KI-Suche', 'perf': 'Website-Optimierung'},
   'cta_title': 'Noch eine Frage?', 'cta_text': 'Schreiben Sie uns. Sie erhalten eine klare, persönliche Antwort.',
+ },
+}
+
+
+# ------------------------------------------------------------------ combined SEO & GEO page
+SEOGEO = {
+ 'en': {
+  'title': 'SEO & GEO Agency: Rank in Google, Get Cited by AI | Web Better',
+  'desc': 'SEO and GEO from Web Better (webbetter.ch): technical SEO, content and Core Web Vitals for Google and Bing, plus generative engine optimization so ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude cite your brand.',
+  'crumb': 'SEO & GEO', 'kicker': 'SERVICES / SEO & GEO',
+  'h1a': 'Found in search. Cited by AI.', 'h1b': 'SEO and GEO, engineered as one system.',
+  'lead': 'Your customers search on Google and ask ChatGPT, Perplexity, Gemini and Copilot. Web Better builds the fast, structured, factual foundation that ranks in classic search and gets your brand named inside AI answers.',
+  'cta1': 'Start your SEO & GEO project', 'cta2': 'Read the FAQ',
+  'split_label': '[ TWO DISCIPLINES ]', 'split_title': 'Rankings and citations,<br>from one foundation.',
+  'seo_label': '[ SEO: FOUR PILLARS ]', 'seo_title': 'Everything search engines<br>need to rank you.',
+  'geo_label': '[ GEO: FIVE LEVERS ]', 'geo_title': 'Everything AI assistants<br>need to cite you.',
+  'steps_label': '[ HOW WE WORK ]', 'steps_title': 'One programme for<br>search and AI.',
+  'steps': [
+    ('Audit', 'We crawl your site, review Search Console and analytics, benchmark competitors, and ask ChatGPT, Perplexity, Gemini, Copilot and Claude the questions your customers ask to see who gets cited today.'),
+    ('Strategy', 'A keyword, intent and question map, a target site architecture and a prioritised plan for SEO and GEO, ranked by impact.'),
+    ('Build and fix', 'Templates, structured data, llms.txt, redirects, internal links, AI crawler access and Core Web Vitals, shipped in tested releases.'),
+    ('Content and authority', 'Pages written as clear, citable answers to real questions, consistent company profiles and relevant mentions across the web.'),
+    ('Measure and grow', 'Monthly reporting on rankings, clicks, conversions, Core Web Vitals and AI citations, with the next improvements already planned.'),
+  ],
+  'faq_label': '[ SEO & GEO QUESTIONS ]', 'faq_title': 'SEO and GEO, answered.',
+  'cta_title': 'Ready to be found and cited?', 'cta_text': 'Tell us where you want to rank and which questions your customers ask. You get a clear plan and a fixed proposal.',
+ },
+ 'de': {
+  'title': 'SEO- & GEO-Agentur: Bei Google ranken, von KI zitiert werden | Web Better',
+  'desc': 'SEO und GEO von Web Better (webbetter.ch): technisches SEO, Content und Core Web Vitals für Google und Bing, dazu Generative Engine Optimization, damit ChatGPT, Perplexity, Gemini, AI Overviews, Copilot und Claude Ihre Marke zitieren.',
+  'crumb': 'SEO & GEO', 'kicker': 'LEISTUNGEN / SEO & GEO',
+  'h1a': 'Gefunden in der Suche. Zitiert von KI.', 'h1b': 'SEO und GEO, als ein System entwickelt.',
+  'lead': 'Ihre Kundschaft sucht bei Google und fragt ChatGPT, Perplexity, Gemini und Copilot. Web Better baut das schnelle, strukturierte und faktenbasierte Fundament, das in der klassischen Suche rankt und Ihre Marke in KI-Antworten nennen lässt.',
+  'cta1': 'SEO- & GEO-Projekt starten', 'cta2': 'Zu den FAQ',
+  'split_label': '[ ZWEI DISZIPLINEN ]', 'split_title': 'Rankings und Zitate,<br>aus einem Fundament.',
+  'seo_label': '[ SEO: VIER SÄULEN ]', 'seo_title': 'Alles, was Suchmaschinen<br>brauchen, um Sie zu ranken.',
+  'geo_label': '[ GEO: FÜNF HEBEL ]', 'geo_title': 'Alles, was KI-Assistenten<br>brauchen, um Sie zu zitieren.',
+  'steps_label': '[ SO ARBEITEN WIR ]', 'steps_title': 'Ein Programm für<br>Suche und KI.',
+  'steps': [
+    ('Audit', 'Wir crawlen Ihre Website, prüfen Search Console und Analytics, vergleichen Mitbewerber und stellen ChatGPT, Perplexity, Gemini, Copilot und Claude die Fragen Ihrer Kundschaft, um zu sehen, wer heute zitiert wird.'),
+    ('Strategie', 'Eine Keyword-, Intent- und Fragen-Map, eine Zielarchitektur der Website und ein priorisierter Plan für SEO und GEO, geordnet nach Wirkung.'),
+    ('Umsetzen und korrigieren', 'Templates, strukturierte Daten, llms.txt, Weiterleitungen, interne Links, Zugang für KI-Crawler und Core Web Vitals, in getesteten Releases.'),
+    ('Content und Autorität', 'Seiten als klare, zitierbare Antworten auf echte Fragen, einheitliche Firmenprofile und relevante Erwähnungen im Web.'),
+    ('Messen und wachsen', 'Monatliche Berichte zu Rankings, Klicks, Conversions, Core Web Vitals und KI-Zitaten, mit den nächsten Verbesserungen bereits geplant.'),
+  ],
+  'faq_label': '[ FRAGEN ZU SEO & GEO ]', 'faq_title': 'SEO und GEO, beantwortet.',
+  'cta_title': 'Bereit, gefunden und zitiert zu werden?', 'cta_text': 'Sagen Sie uns, wo Sie ranken wollen und welche Fragen Ihre Kundschaft stellt. Sie erhalten einen klaren Plan und ein verbindliches Angebot.',
+ },
+}
+
+# ------------------------------------------------------------------ web & app development page
+DEV = {
+ 'en': {
+  'title': 'Web & App Development Agency: Websites, Web Apps, iOS & Android | Web Better',
+  'desc': 'Web and app development from Web Better (webbetter.ch): fast websites, web apps, iOS and Android apps, e-commerce and headless CMS, designed, engineered and launched with SEO, accessibility and Core Web Vitals built in.',
+  'crumb': 'Web & App Development', 'kicker': 'SERVICES / WEB & APP DEVELOPMENT',
+  'h1a': 'Websites and apps that perform.', 'h1b': 'Designed, engineered and launched by one team.',
+  'lead': 'From a fast marketing site to a full web app or a mobile app on iOS and Android, Web Better designs and builds digital products that load instantly, rank well, convert visitors and are easy for your team to run.',
+  'cta1': 'Start your project', 'cta2': 'Read the FAQ',
+  'stats_label': '[ BUILT INTO EVERY PROJECT ]',
+  'stats': [('2.5', 's', 'Largest Contentful Paint, or faster'), ('100', '%', 'responsive on phones, tablets and desktops'), ('2', '', 'languages supported out of the box, EN and DE'), ('24', '/7', 'global hosting with automatic scaling')],
+  'pillars_label': '[ WHAT WE BUILD ]', 'pillars_title': 'From first click<br>to daily use.',
+  'pillars': [
+    ('Websites', 'Fast, beautiful marketing sites and corporate websites that rank and convert.', ['Design system and UI', 'Multilingual with hreflang', 'Headless CMS for your team', 'SEO and GEO foundation']),
+    ('Web apps', 'Portals, dashboards and SaaS products that feel as fast as native software.', ['Accounts, roles and permissions', 'APIs and integrations', 'Real-time data and dashboards', 'Secure, scalable backends']),
+    ('Mobile apps', 'iOS and Android apps with the polish people expect from top brands.', ['iOS and Android from one codebase', 'Native features and offline mode', 'App Store and Play Store release', 'Analytics and crash reporting']),
+    ('E-commerce', 'Shops that load fast, rank well and make checkout effortless.', ['Shopify or headless commerce', 'Payments, shipping and tax', 'Product pages that rank', 'Inventory and ERP integrations']),
+    ('Care and growth', 'We stay on after launch so your product keeps getting better.', ['Updates and security patches', 'Monitoring and backups', 'Performance and SEO checks', 'New features in sprints']),
+  ],
+  'stack_label': '[ TECHNOLOGY ]', 'stack_title': 'Modern, proven technology.',
+  'stack': [('Frontend', 'Next.js, React, Astro, TypeScript'), ('Mobile', 'React Native, Swift, Kotlin'), ('Content', 'Sanity, Storyblok, WordPress (headless)'), ('Commerce', 'Shopify, Stripe, headless checkouts'), ('Backend', 'Node.js, PostgreSQL, serverless APIs'), ('Hosting', 'Vercel, global edge network, CI/CD')],
+  'steps_label': '[ HOW WE WORK ]', 'steps_title': 'From idea to launch<br>in five steps.',
+  'steps': [
+    ('Discovery', 'Goals, users and requirements, turned into a clear scope, timeline and fixed proposal.'),
+    ('UX and design', 'User flows, wireframes and a design system, tested in clickable prototypes before a line of code.'),
+    ('Build', 'Engineering in short sprints with weekly previews, so you see progress and steer early.'),
+    ('Launch', 'Quality checks for speed, accessibility, SEO and security, then a smooth go-live with redirects in place.'),
+    ('Care', 'Monitoring, updates and continuous improvement, with your team trained to run the product.'),
+  ],
+  'checks_label': '[ INCLUDED IN EVERY BUILD ]', 'checks_title': 'Quality, built in from day one.',
+  'checks': ['Responsive, mobile-first design', 'Accessibility to WCAG guidelines', 'Core Web Vitals in the green', 'SEO and structured data', 'Multilingual setup', 'Privacy-first, consent-ready', 'Security headers and HTTPS', 'CMS your team can edit', 'Analytics and conversion tracking', 'Automated deployments', 'Documentation and training', 'Launch support and handover'],
+  'faq_label': '[ DEVELOPMENT QUESTIONS ]', 'faq_title': 'Web and app development, answered.',
+  'cta_title': 'Ready to build?', 'cta_text': 'Tell us what you want to create. You get a clear scope, a timeline and a fixed proposal.',
+  'service': ('Web and app development', 'Design and development of websites, web apps, iOS and Android apps and e-commerce, with SEO, accessibility and performance built in.'),
+ },
+ 'de': {
+  'title': 'Web- & App-Entwicklung: Websites, Web-Apps, iOS & Android | Web Better',
+  'desc': 'Web- und App-Entwicklung von Web Better (webbetter.ch): schnelle Websites, Web-Apps, iOS- und Android-Apps, E-Commerce und Headless CMS, gestaltet, entwickelt und lanciert mit SEO, Barrierefreiheit und Core Web Vitals.',
+  'crumb': 'Web- & App-Entwicklung', 'kicker': 'LEISTUNGEN / WEB- & APP-ENTWICKLUNG',
+  'h1a': 'Websites und Apps, die überzeugen.', 'h1b': 'Gestaltet, entwickelt und lanciert von einem Team.',
+  'lead': 'Von der schnellen Marketing-Website bis zur kompletten Web-App oder Mobile-App für iOS und Android: Web Better gestaltet und entwickelt digitale Produkte, die sofort laden, gut ranken, Besucher überzeugen und für Ihr Team einfach zu betreiben sind.',
+  'cta1': 'Projekt starten', 'cta2': 'Zu den FAQ',
+  'stats_label': '[ IN JEDEM PROJEKT ENTHALTEN ]',
+  'stats': [('2.5', 's', 'Largest Contentful Paint oder schneller'), ('100', '%', 'responsiv auf Smartphone, Tablet und Desktop'), ('2', '', 'Sprachen ab Start, Deutsch und Englisch'), ('24', '/7', 'globales Hosting mit automatischer Skalierung')],
+  'pillars_label': '[ WAS WIR BAUEN ]', 'pillars_title': 'Vom ersten Klick<br>bis zur täglichen Nutzung.',
+  'pillars': [
+    ('Websites', 'Schnelle, schöne Marketing- und Unternehmenswebsites, die ranken und überzeugen.', ['Designsystem und UI', 'Mehrsprachig mit hreflang', 'Headless CMS für Ihr Team', 'SEO- und GEO-Fundament']),
+    ('Web-Apps', 'Portale, Dashboards und SaaS-Produkte, die sich so schnell anfühlen wie native Software.', ['Konten, Rollen und Rechte', 'APIs und Integrationen', 'Echtzeitdaten und Dashboards', 'Sichere, skalierbare Backends']),
+    ('Mobile Apps', 'iOS- und Android-Apps mit dem Schliff, den man von Top-Marken erwartet.', ['iOS und Android aus einer Codebasis', 'Native Funktionen und Offline-Modus', 'Veröffentlichung im App Store und Play Store', 'Analytics und Absturzberichte']),
+    ('E-Commerce', 'Shops, die schnell laden, gut ranken und den Checkout mühelos machen.', ['Shopify oder Headless Commerce', 'Zahlung, Versand und Steuern', 'Produktseiten, die ranken', 'Lager- und ERP-Integrationen']),
+    ('Betreuung und Wachstum', 'Wir bleiben nach dem Launch dabei, damit Ihr Produkt immer besser wird.', ['Updates und Sicherheitspatches', 'Monitoring und Backups', 'Performance- und SEO-Checks', 'Neue Funktionen in Sprints']),
+  ],
+  'stack_label': '[ TECHNOLOGIE ]', 'stack_title': 'Moderne, bewährte Technologie.',
+  'stack': [('Frontend', 'Next.js, React, Astro, TypeScript'), ('Mobile', 'React Native, Swift, Kotlin'), ('Content', 'Sanity, Storyblok, WordPress (headless)'), ('Commerce', 'Shopify, Stripe, Headless Checkouts'), ('Backend', 'Node.js, PostgreSQL, Serverless-APIs'), ('Hosting', 'Vercel, globales Edge-Netzwerk, CI/CD')],
+  'steps_label': '[ SO ARBEITEN WIR ]', 'steps_title': 'Von der Idee zum Launch<br>in fünf Schritten.',
+  'steps': [
+    ('Discovery', 'Ziele, Nutzer und Anforderungen, übersetzt in einen klaren Umfang, Zeitplan und ein verbindliches Angebot.'),
+    ('UX und Design', 'User Flows, Wireframes und ein Designsystem, getestet in klickbaren Prototypen, bevor eine Zeile Code entsteht.'),
+    ('Entwicklung', 'Entwicklung in kurzen Sprints mit wöchentlichen Vorschauen, damit Sie den Fortschritt sehen und früh steuern.'),
+    ('Launch', 'Qualitätschecks für Geschwindigkeit, Barrierefreiheit, SEO und Sicherheit, dann ein reibungsloser Go-live mit Weiterleitungen.'),
+    ('Betreuung', 'Monitoring, Updates und kontinuierliche Verbesserung, und Ihr Team ist geschult, das Produkt zu betreiben.'),
+  ],
+  'checks_label': '[ IN JEDEM PROJEKT ENTHALTEN ]', 'checks_title': 'Qualität, vom ersten Tag an eingebaut.',
+  'checks': ['Responsives Mobile-first-Design', 'Barrierefreiheit nach WCAG', 'Core Web Vitals im grünen Bereich', 'SEO und strukturierte Daten', 'Mehrsprachiges Setup', 'Datenschutzfreundlich, Consent-ready', 'Sicherheits-Header und HTTPS', 'CMS, das Ihr Team pflegen kann', 'Analytics und Conversion-Tracking', 'Automatisierte Deployments', 'Dokumentation und Schulung', 'Launch-Support und Übergabe'],
+  'faq_label': '[ FRAGEN ZUR ENTWICKLUNG ]', 'faq_title': 'Web- und App-Entwicklung, beantwortet.',
+  'cta_title': 'Bereit loszulegen?', 'cta_text': 'Erzählen Sie uns, was Sie bauen möchten. Sie erhalten einen klaren Umfang, einen Zeitplan und ein verbindliches Angebot.',
+  'service': ('Web- und App-Entwicklung', 'Gestaltung und Entwicklung von Websites, Web-Apps, iOS- und Android-Apps und E-Commerce, mit SEO, Barrierefreiheit und Performance.'),
  },
 }
 
@@ -412,6 +529,106 @@ def geo_main(lang, base, faq_items):
   </section>
 ''' + cta(c, lang)
 
+
+def seogeo_main(lang, base, faq_items):
+    c, sc, gc = SEOGEO[lang], SEO[lang], GEO[lang]
+    stats = ''.join(f"""      <div class="sx reveal"><b><span data-count="{n}">{n}</span>{u}</b><span>{E(t)}</span></div>
+""" for n, u, t in sc['stats'])
+    h = gc['compare_head']
+    rows = ''.join(f'<tr class="reveal"><th scope="row">{E(a)}</th><td>{E(b)}</td><td>{E(cc)}</td></tr>' for a, b, cc in gc['compare'])
+    flow = ''.join(f"""      <li class="fl-node reveal" style="--i:{i}"><span class="fl-dot"></span><span class="mono fl-n">{i + 1:02d}</span><h3>{E(t)}</h3><p>{E(d)}</p></li>
+""" for i, (t, d) in enumerate(gc['flow']))
+    engines = ''.join(f"""      <article class="en-card reveal" style="--i:{i}"><h3>{E(t)}</h3><p>{E(d)}</p></article>
+""" for i, (t, d) in enumerate(gc['engines']))
+    checks = ''.join(f'<li class="ck reveal" style="--i:{i}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>{E(x)}</li>' for i, x in enumerate(sc['checks']))
+    links = ' '.join(f'<a class="mono pr-link" href="{hh}">{E(t)} ↗</a>' for hh, t in sc['proof_links'])
+    seo_p = dict(sc); seo_p['pillars_label'] = c['seo_label']; seo_p['pillars_title'] = c['seo_title']
+    geo_p = dict(gc); geo_p['pillars_label'] = c['geo_label']; geo_p['pillars_title'] = c['geo_title']
+    return hero(c, 'seo', lang, base) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(sc['stats_label'])}</p>
+    <div class="sx-row">
+{stats}    </div>
+  </section>
+  <section class="pg-sec container">
+    <p class="mono label">{E(c['split_label'])}</p>
+    <h2 class="pg-h2 reveal">{c['split_title']}</h2>
+    <div class="cmp-wrap"><table class="cmp"><thead><tr><th scope="col">{E(h[0])}</th><th scope="col">{E(h[1])}</th><th scope="col" class="hot">{E(h[2])}</th></tr></thead><tbody>{rows}</tbody></table></div>
+  </section>
+""" + pillars(seo_p) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(gc['flow_label'])}</p>
+    <h2 class="pg-h2 reveal">{gc['flow_title']}</h2>
+    <ol class="fl">
+      <li class="fl-line" aria-hidden="true"><i></i></li>
+{flow}    </ol>
+  </section>
+""" + pillars(geo_p) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(gc['engines_label'])}</p>
+    <h2 class="pg-h2 reveal">{E(gc['engines_title'])}</h2>
+    <div class="en-grid">
+{engines}    </div>
+  </section>
+""" + steps(c) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(sc['checks_label'])}</p>
+    <h2 class="pg-h2 reveal">{E(sc['checks_title'])}</h2>
+    <ul class="ck-grid">{checks}</ul>
+  </section>
+  <section class="pg-sec container pr">
+    <p class="mono label">{E(sc['proof_label'])}</p>
+    <h2 class="pg-h2 reveal">{E(sc['proof_title'])}</h2>
+    <p class="pr-text reveal">{E(sc['proof_text'])}</p>
+    <div class="pr-links reveal">{links}</div>
+  </section>
+  <section class="pg-sec container faq-page-sec">
+    <p class="mono label">{E(c['faq_label'])}</p>
+    <h2 class="pg-h2">{E(c['faq_title'])}</h2>
+    <div class="faq-list">
+{faq_block(faq_items, lang)}
+    </div>
+  </section>
+""" + cta(c, lang)
+
+def dev_main(lang, base, faq_items):
+    c = DEV[lang]
+    stats = ''.join(f"""      <div class="sx reveal"><b><span data-count="{n}">{n}</span>{u}</b><span>{E(t)}</span></div>
+""" for n, u, t in c['stats'])
+    stack = ''.join(f"""      <article class="en-card reveal" style="--i:{i}"><h3>{E(t)}</h3><p>{E(d)}</p></article>
+""" for i, (t, d) in enumerate(c['stack']))
+    checks = ''.join(f'<li class="ck reveal" style="--i:{i}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>{E(x)}</li>' for i, x in enumerate(c['checks']))
+    return hero(c, 'dev', lang, base) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(c['stats_label'])}</p>
+    <div class="sx-row">
+{stats}    </div>
+  </section>
+""" + pillars(c) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(c['stack_label'])}</p>
+    <h2 class="pg-h2 reveal">{E(c['stack_title'])}</h2>
+    <div class="en-grid stack-grid">
+{stack}    </div>
+  </section>
+""" + steps(c) + f"""  <section class="pg-sec container">
+    <p class="mono label">{E(c['checks_label'])}</p>
+    <h2 class="pg-h2 reveal">{E(c['checks_title'])}</h2>
+    <ul class="ck-grid">{checks}</ul>
+  </section>
+  <section class="pg-sec container faq-page-sec">
+    <p class="mono label">{E(c['faq_label'])}</p>
+    <h2 class="pg-h2">{E(c['faq_title'])}</h2>
+    <div class="faq-list">
+{faq_block(faq_items, lang)}
+    </div>
+  </section>
+""" + cta(c, lang)
+
+def seogeo_ld(lang, items):
+    def g(url):
+        out = []
+        for key, c in (('seo', SEO[lang]), ('geo', GEO[lang])):
+            name, desc = c['service']
+            out.append({"@type": "Service", "@id": url + "#" + key, "name": name, "description": desc, "serviceType": name,
+                        "provider": {"@id": SITE + "/#org"}, "areaServed": ["CH", "DE", "AT", "Worldwide"], "availableLanguage": ["en", "de"], "url": url})
+        return out + faq_ld(items, lang)(url)
+    return g
+
 def faq_main(lang, base, faq_all):
     c = FAQP[lang]
     order = ['general', 'projects', 'build', 'seo', 'geo', 'perf']
@@ -549,9 +766,10 @@ def build(ctx):
         base = '/de/' if lang == 'de' else '/'
         seo_items = [f for f in FAQ if f['cat'] == 'seo']
         geo_items = [f for f in FAQ if f['cat'] == 'geo']
+        dev_items = [f for f in FAQ if f['cat'] in ('build', 'perf')]
         specs = [
-          ('seo', SEO[lang], seo_main(lang, base, seo_items), service_ld(SEO[lang], lang, seo_items)),
-          ('geo', GEO[lang], geo_main(lang, base, geo_items), service_ld(GEO[lang], lang, geo_items)),
+          ('seo-geo', SEOGEO[lang], seogeo_main(lang, base, seo_items + geo_items), seogeo_ld(lang, seo_items + geo_items)),
+          ('web-app-development', DEV[lang], dev_main(lang, base, dev_items), service_ld(DEV[lang], lang, dev_items)),
           ('faq', FAQP[lang], faq_main(lang, base, FAQ), faq_ld(FAQ, lang)),
           ('privacy', PRIVACY[lang], privacy_main(lang, base), lambda url: []),
         ]
@@ -566,4 +784,4 @@ def build(ctx):
     return pages
 
 def llms_pages():
-    return {'seo': SEO, 'geo': GEO}
+    return {'seo': SEO, 'geo': GEO, 'dev': DEV}

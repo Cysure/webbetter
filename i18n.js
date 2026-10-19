@@ -280,6 +280,8 @@
     'Web & Apps': 'Web & Apps',
     'Web & App Development': 'Web- & App-Entwicklung',
 
+    'CASPAR DAVID FRIEDRICH · WANDERER ABOVE THE SEA OF FOG · C. 1818': 'CASPAR DAVID FRIEDRICH · DER WANDERER ÜBER DEM NEBELMEER · UM 1818',
+
     // attributes
     'Web Better home': 'Web Better Startseite',
     'Toggle night mode': 'Nachtmodus umschalten',

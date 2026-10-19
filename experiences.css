@@ -313,3 +313,17 @@
 .tw-sub { position: relative; margin: 0; color: var(--muted); text-align: center; }
 html:not(.anim) .tw-sub { opacity: 1; }
 @media (max-width: 900px) { .typewin { height: 200vh; } .tw-text { font-size: 17vw; } }
+
+/* Designed to be found: Friedrich's Wanderer is seen only through the letters */
+.tw-text { font-weight: 900; }
+.tw-line, .tw-line.tw-muted, .tw-line.tw-accent {
+  color: transparent; -webkit-background-clip: text; background-clip: text; background-repeat: no-repeat;
+  background-image: linear-gradient(180deg, rgba(7, 20, 49, .42), rgba(7, 20, 49, .3) 45%, rgba(7, 20, 49, .38)), url("assets/art/friedrich-wanderer.jpg");
+  background-size: 100% 100%, cover; background-position: 0 0, 50% 55%;
+  padding: 0 .04em .06em; }
+:root[data-theme="dark"] .tw-line { background-image: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0)), url("assets/art/friedrich-wanderer.jpg"); }
+.tw-glow { opacity: .55; }
+.tw-credit { position: absolute !important; right: var(--gutter); bottom: 22px; margin: 0; font-size: 9px; color: var(--muted); text-align: right; max-width: 60vw; }
+@media (max-width: 900px) {
+  .tw-credit { left: 96px; right: var(--gutter); bottom: 34px; max-width: none; text-align: right; line-height: 1.6; }
+}

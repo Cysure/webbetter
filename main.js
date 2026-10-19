@@ -195,6 +195,7 @@
 
   /* ---------- Designed to be found: parallax lines ---------- */
   const twSec = $('#typewin'), twText = $('#twText'), twLines = $$('.tw-line'), twGlow = $('.tw-glow'), twSub = $('.tw-sub');
+  const TW_IMG = 1920 / 1440;   // the painting seen through the letters
   let twS = 0;   // smoothed progress
   // keep the widest line inside the screen (German lines are longer)
   const fitTw = () => {
@@ -283,14 +284,25 @@
       const ease = x => 1 - Math.pow(1 - x, 3);
       twLines.forEach((l, i) => {
         const dir = +l.dataset.dir;
-        const enter = ease(clamp((twS - i * .07) / .42));          // staggered arrival
-        const leave = clamp((twS - .78) / .22);                    // exit
-        const x = dir * ((1 - enter) * 42 + (twS - .5) * (3 + i * 2.5));   // vw
-        const y = -leave * (40 + i * 26);                          // px
+        const enter = ease(clamp((twS - .04 - i * .09) / .34));     // each word arrives in turn
+        const leave = clamp((twS - .8) / .2);
+        const x = dir * ((1 - enter) * 14 + (twS - .5) * (2 + i * 1.6));    // vw: a gentle slide in, then parallax drift
+        const y = (1 - enter) * 60 - leave * (50 + i * 30);                  // px: rise in, lift out
         l.style.transform = `translate3d(${x.toFixed(2)}vw, ${y.toFixed(1)}px, 0)`;
-        l.style.opacity = (.12 + enter * .88 - leave * .6).toFixed(3);
+        l.style.opacity = (enter * (1 - leave * .85)).toFixed(3);
       });
       twText.style.setProperty('--tw-shift', `${(twS * 100).toFixed(1)}%`);
+      // the painting lives in the letters: it is laid over the whole headline block and each word
+      // shows its own window onto it, so the words drift across a painting that drifts more slowly
+      const hr = twText.getBoundingClientRect();
+      const z = 1.18 - ease(clamp(twS / .7)) * .16;
+      const bw = Math.max(hr.width, hr.height * TW_IMG) * z, bh = bw / TW_IMG;
+      const ox = hr.left + (hr.width - bw) * .5, oy = hr.top + (hr.height - bh) * (.58 - twS * .22);
+      twLines.forEach(l => {
+        const lr = l.getBoundingClientRect();
+        l.style.backgroundSize = `100% 100%, ${bw.toFixed(1)}px ${bh.toFixed(1)}px`;
+        l.style.backgroundPosition = `0 0, ${(ox - lr.left).toFixed(1)}px ${(oy - lr.top).toFixed(1)}px`;
+      });
       twGlow.style.transform = `translate3d(-50%, calc(-50% + ${((twS - .5) * -160).toFixed(1)}px), 0) scale(${(.9 + twS * .35).toFixed(3)})`;
       twSub.style.opacity = clamp((twS - .4) / .2) * (1 - clamp((twS - .82) / .14));
     }

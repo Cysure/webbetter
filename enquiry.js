@@ -101,6 +101,6 @@
     });
   }
 
-  setup('enquiry', 'data-enquiry', '/api/enquiry', 'enquiry');
-  setup('careers', 'data-careers', '/api/careers', 'careers');
+  setup('enquiry', 'data-enquiry', '/api/enquiry/', 'enquiry');
+  setup('careers', 'data-careers', '/api/careers/', 'careers');
 })();

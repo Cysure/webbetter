@@ -295,3 +295,21 @@
   .p3 { display: none; }
   .t1, .p1, .t2, .t3, .p3, .t4, .p2 { grid-row: auto; }
 }
+
+/* ============ Designed to be found: parallax type ============ */
+.typewin { position: relative; height: 230vh; }
+.typewin-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; place-items: center; align-content: center; gap: clamp(20px, 3vw, 40px); padding: 0 var(--gutter); }
+.tw-glow { position: absolute; left: 50%; top: 50%; width: min(90vw, 1100px); aspect-ratio: 1.6; border-radius: 50%; pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  background: radial-gradient(closest-side, rgba(42, 168, 255, .22), rgba(0, 88, 190, .1) 55%, transparent 75%); will-change: transform; }
+.tw-text { position: relative; margin: 0; text-align: center; font-weight: 800; letter-spacing: -.058em; line-height: .9;
+  font-size: clamp(56px, min(13vw, 19vh), 236px); color: var(--ink); }
+.tw-line { display: block; white-space: nowrap; will-change: transform, opacity; }
+.tw-muted { color: var(--muted); }
+.tw-accent { background: linear-gradient(100deg, #001742 0%, #0058be 30%, #2aa8ff 55%, #0058be 80%, #001742 100%);
+  background-size: 220% 100%; background-position: var(--tw-shift, 50%) 0; -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: .08em; }
+:root[data-theme="dark"] .tw-accent { background-image: linear-gradient(100deg, #7fc4ff 0%, #2f8bff 30%, #2aa8ff 55%, #2f8bff 80%, #7fc4ff 100%); }
+.tw-sub { position: relative; margin: 0; color: var(--muted); text-align: center; }
+html:not(.anim) .tw-sub { opacity: 1; }
+@media (max-width: 900px) { .typewin { height: 200vh; } .tw-text { font-size: 17vw; } }

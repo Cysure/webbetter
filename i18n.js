@@ -274,6 +274,8 @@
     'PRIVACY POLICY': 'DATENSCHUTZ',
     'COOKIE SETTINGS': 'COOKIE-EINSTELLUNGEN',
 
+    '[ SEARCH · AI ANSWERS · EVERY SCREEN ]': '[ SUCHE · KI-ANTWORTEN · JEDER BILDSCHIRM ]',
+
     // attributes
     'Web Better home': 'Web Better Startseite',
     'Toggle night mode': 'Nachtmodus umschalten',

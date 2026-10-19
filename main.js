@@ -193,34 +193,19 @@
     });
   })(wordmark);
 
-  /* ---------- Designed to stand out: split into letters ---------- */
-  const soSec = $('#standout'), soText = $('#soText'), soLines = $$('.so-line');
-  soText.setAttribute('aria-label', soText.textContent.replace(/\s+/g, ' ').trim());
-  const soChars = [];
-  soLines.forEach(line => {
-    const words = line.textContent.trim().split(/\s+/);
-    line.textContent = ''; line.setAttribute('aria-hidden', 'true');
-    words.forEach((w, wi) => {
-      // a word never breaks between its letters; lines may only wrap between words
-      const word = document.createElement('span'); word.className = 'so-word';
-      [...w].forEach(ch => {
-        const sp = document.createElement('span'); sp.className = 'sc'; sp.textContent = ch;
-        word.appendChild(sp); soChars.push(sp);
-      });
-      line.appendChild(word);
-      if (wi < words.length - 1) line.appendChild(document.createTextNode(' '));
-    });
-  });
-  // shrink the type until the longest word fits the screen (matters for German)
-  const fitSo = () => {
-    soText.style.fontSize = '';
-    const avail = soText.parentElement.clientWidth * .92;
-    const widest = Math.max(...$$('.so-word', soText).map(w => w.scrollWidth));
-    if (widest > avail) soText.style.fontSize = (parseFloat(getComputedStyle(soText).fontSize) * avail / widest).toFixed(1) + 'px';
+  /* ---------- Designed to be found: parallax lines ---------- */
+  const twSec = $('#typewin'), twText = $('#twText'), twLines = $$('.tw-line'), twGlow = $('.tw-glow'), twSub = $('.tw-sub');
+  let twS = 0;   // smoothed progress
+  // keep the widest line inside the screen (German lines are longer)
+  const fitTw = () => {
+    twText.style.fontSize = '';
+    const avail = twText.parentElement.clientWidth * .9;
+    const widest = Math.max(...twLines.map(l => l.scrollWidth));
+    if (widest > avail) twText.style.fontSize = (parseFloat(getComputedStyle(twText).fontSize) * avail / widest).toFixed(1) + 'px';
   };
-  fitSo();
-  document.fonts?.ready.then(fitSo);
-  addEventListener('resize', fitSo);
+  fitTw();
+  document.fonts?.ready.then(fitTw);
+  addEventListener('resize', fitTw);
 
   /* ---------- Scroll-driven scene ---------- */
   const header = $('#header'), progressBar = $('#progress');
@@ -289,24 +274,25 @@
       bandPct.textContent = String(Math.round(bandP * 100)).padStart(3, '0');
     }
 
-    // STAND OUT: letters fade and rise in one by one, hold, then the block drifts up into the next section
-    const sor = soSec.getBoundingClientRect();
-    if (sor.bottom > 0 && sor.top < vh) {
-      const sp = clamp(-sor.top / (sor.height - vh));
-      const n = soChars.length;
-      const reveal = clamp(sp / .58);                       // 0 → .58: letters arrive
-      soChars.forEach((c, i) => {
-        const k = clamp(reveal * (n + 4) - i, 0, 4) / 4;     // each letter eases in over ~4 steps
-        const e = 1 - Math.pow(1 - k, 3);
-        c.style.opacity = (.04 + e * .96).toFixed(3);
-        c.style.transform = `translateY(${((1 - e) * 46).toFixed(1)}px)`;
+    // DESIGNED TO BE FOUND: lines glide in from alternating sides, keep a gentle parallax, then lift away
+    const twr = twSec.getBoundingClientRect();
+    if (twr.bottom > -vh * .2 && twr.top < vh * 1.2) {
+      const target = clamp(-twr.top / (twr.height - vh));
+      twS += (target - twS) * .09;
+      if (Math.abs(target - twS) < .0005) twS = target;
+      const ease = x => 1 - Math.pow(1 - x, 3);
+      twLines.forEach((l, i) => {
+        const dir = +l.dataset.dir;
+        const enter = ease(clamp((twS - i * .07) / .42));          // staggered arrival
+        const leave = clamp((twS - .78) / .22);                    // exit
+        const x = dir * ((1 - enter) * 42 + (twS - .5) * (3 + i * 2.5));   // vw
+        const y = -leave * (40 + i * 26);                          // px
+        l.style.transform = `translate3d(${x.toFixed(2)}vw, ${y.toFixed(1)}px, 0)`;
+        l.style.opacity = (.12 + enter * .88 - leave * .6).toFixed(3);
       });
-      const gather = 1 - clamp(sp / .58);
-      soLines[0].style.transform = `translateY(${(-gather * 40).toFixed(1)}px)`;
-      soLines[1].style.transform = `translateY(${(gather * 40).toFixed(1)}px)`;
-      const drift = clamp((sp - .8) / .2);                   // .58 → .8 hold, then a slow parallax lift
-      soText.style.transform = `translateY(${(-drift * vh * .28).toFixed(1)}px)`;
-      soText.style.letterSpacing = '';
+      twText.style.setProperty('--tw-shift', `${(twS * 100).toFixed(1)}%`);
+      twGlow.style.transform = `translate3d(-50%, calc(-50% + ${((twS - .5) * -160).toFixed(1)}px), 0) scale(${(.9 + twS * .35).toFixed(3)})`;
+      twSub.style.opacity = clamp((twS - .4) / .2) * (1 - clamp((twS - .82) / .14));
     }
 
     // depth inside each stuck service panel: title drifts up, lists drift down
@@ -486,10 +472,6 @@
         });
       };
 
-      // type window
-      const typeSec = $('#typewin');
-      lazy(typeSec, () => X.typeWindow($('#typeGL'), DE ? (innerWidth < 700 ? ['GEMACHT,', 'UM GEFUNDEN', 'ZU WERDEN.'] : ['GEMACHT, UM', 'GEFUNDEN ZU WERDEN.']) : (innerWidth < 700 ? ['DESIGNED', 'TO BE', 'FOUND.'] : ['DESIGNED', 'TO BE FOUND.'])),
-        (L, t) => { if (vis(typeSec)) L.render(t * .5, progressOf(typeSec)); });
 
       // one experience per service panel
       const makers = [X.design, X.tunnel, X.city];

@@ -142,6 +142,29 @@
       const R = WBGL.ribbons(cv, { host: hero, count: 5, gain: .9 });
       if (R) layers.push(t => R.render(t * .45, scrollY / innerHeight));
     }
+    // development page: particles reassemble across screens as you scroll, circuit board behind the stack
+    const dm = $('#devMorph'), dmCv = $('#dmGL');
+    if (dm && dmCv && window.WBX) {
+      const M = WBX.deviceMorph(dmCv), items = $$('.dm-item', dm), dmBar = $('.dm-bar i', dm);
+      let s = 0, on = -1;
+      if (M) layers.push(t => {
+        const r = dm.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight) return;
+        const p = clamp(-r.top / (r.height - innerHeight));
+        const raw = clamp(p * 4 - .5, 0, 3), i = Math.min(2, Math.floor(raw)), f = raw - i;
+        const e = clamp((f - .22) / .56), target = i + e * e * (3 - 2 * e);   // each screen holds, then reassembles
+        s += (target - s) * .08;
+        M.render(t, s);
+        const k = Math.round(s);
+        if (k !== on) { on = k; items.forEach((el, j) => el.classList.toggle('on', j === k)); }
+        if (dmBar) dmBar.style.transform = `scaleX(${p.toFixed(3)})`;
+      });
+    }
+    const stCv = $('#stackGL');
+    if (stCv && window.WBX) {
+      const C = WBX.circuit(stCv);
+      if (C) layers.push(t => { if (WBX.onScreen(stCv)) C.render(t, scrollY / innerHeight * .15); });
+    }
     const ctaCv = $('.pg-cta-gl');
     if (ctaCv && window.WBGL) {
       const R2 = WBGL.ribbons(ctaCv, { host: ctaCv.parentElement, count: 4, gain: .7 });

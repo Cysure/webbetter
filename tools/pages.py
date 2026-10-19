@@ -264,6 +264,11 @@ DEV = {
   'cta1': 'Start your project', 'cta2': 'Read the FAQ',
   'stats_label': '[ BUILT INTO EVERY PROJECT ]',
   'stats': [('2.5', 's', 'Largest Contentful Paint, or faster'), ('100', '%', 'responsive on phones, tablets and desktops'), ('2', '', 'languages supported out of the box, EN and DE'), ('24', '/7', 'global hosting with automatic scaling')],
+  'morph_label': '[ ONE PRODUCT, EVERY SCREEN ]', 'morph_title': 'One design system.<br>Every screen.',
+  'morph': [('01 · DESKTOP', 'Websites', 'Wide layouts with room to tell your story, built on one design system.'),
+            ('02 · TABLET', 'Web apps', 'Dashboards and portals that adapt to touch without losing detail.'),
+            ('03 · MOBILE', 'iOS & Android', 'Apps that feel native, from one codebase, ready for both stores.'),
+            ('04 · BACKEND', 'APIs & data', 'Secure APIs, integrations and real-time data behind every screen.')],
   'pillars_label': '[ WHAT WE BUILD ]', 'pillars_title': 'From first click<br>to daily use.',
   'pillars': [
     ('Websites', 'Fast, beautiful marketing sites and corporate websites that rank and convert.', ['Design system and UI', 'Multilingual with hreflang', 'Headless CMS for your team', 'SEO and GEO foundation']),
@@ -297,6 +302,11 @@ DEV = {
   'cta1': 'Projekt starten', 'cta2': 'Zu den FAQ',
   'stats_label': '[ IN JEDEM PROJEKT ENTHALTEN ]',
   'stats': [('2.5', 's', 'Largest Contentful Paint oder schneller'), ('100', '%', 'responsiv auf Smartphone, Tablet und Desktop'), ('2', '', 'Sprachen ab Start, Deutsch und Englisch'), ('24', '/7', 'globales Hosting mit automatischer Skalierung')],
+  'morph_label': '[ EIN PRODUKT, JEDER BILDSCHIRM ]', 'morph_title': 'Ein Designsystem.<br>Jeder Bildschirm.',
+  'morph': [('01 · DESKTOP', 'Websites', 'Grosszügige Layouts mit Raum für Ihre Geschichte, gebaut auf einem Designsystem.'),
+            ('02 · TABLET', 'Web-Apps', 'Dashboards und Portale, die sich an Touch anpassen, ohne an Übersicht zu verlieren.'),
+            ('03 · MOBILE', 'iOS & Android', 'Apps mit nativem Gefühl aus einer Codebasis, bereit für beide Stores.'),
+            ('04 · BACKEND', 'APIs & Daten', 'Sichere APIs, Integrationen und Echtzeitdaten hinter jedem Bildschirm.')],
   'pillars_label': '[ WAS WIR BAUEN ]', 'pillars_title': 'Vom ersten Klick<br>bis zur täglichen Nutzung.',
   'pillars': [
     ('Websites', 'Schnelle, schöne Marketing- und Unternehmenswebsites, die ranken und überzeugen.', ['Designsystem und UI', 'Mehrsprachig mit hreflang', 'Headless CMS für Ihr Team', 'SEO- und GEO-Fundament']),
@@ -594,16 +604,33 @@ def dev_main(lang, base, faq_items):
     stack = ''.join(f"""      <article class="en-card reveal" style="--i:{i}"><h3>{E(t)}</h3><p>{E(d)}</p></article>
 """ for i, (t, d) in enumerate(c['stack']))
     checks = ''.join(f'<li class="ck reveal" style="--i:{i}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>{E(x)}</li>' for i, x in enumerate(c['checks']))
+    morph = ''.join(f"""        <li class="dm-item{' on' if i == 0 else ''}"><span class="mono">{E(tag)}</span><h3>{E(t)}</h3><p>{E(d)}</p></li>
+""" for i, (tag, t, d) in enumerate(c['morph']))
     return hero(c, 'dev', lang, base) + f"""  <section class="pg-sec container">
     <p class="mono label">{E(c['stats_label'])}</p>
     <div class="sx-row">
 {stats}    </div>
   </section>
-""" + pillars(c) + f"""  <section class="pg-sec container">
-    <p class="mono label">{E(c['stack_label'])}</p>
-    <h2 class="pg-h2 reveal">{E(c['stack_title'])}</h2>
-    <div class="en-grid stack-grid">
-{stack}    </div>
+  <section class="dm" id="devMorph" aria-labelledby="dm-title">
+    <div class="dm-sticky">
+      <canvas class="dm-gl" id="dmGL" aria-hidden="true"></canvas>
+      <div class="container dm-inner">
+        <p class="mono label">{E(c['morph_label'])}</p>
+        <h2 class="pg-h2" id="dm-title">{c['morph_title']}</h2>
+        <ol class="dm-list">
+{morph}        </ol>
+        <div class="dm-bar" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+  </section>
+""" + pillars(c) + f"""  <section class="pg-sec pg-stack">
+    <canvas class="stack-gl" id="stackGL" aria-hidden="true"></canvas>
+    <div class="container">
+      <p class="mono label">{E(c['stack_label'])}</p>
+      <h2 class="pg-h2 reveal">{E(c['stack_title'])}</h2>
+      <div class="en-grid stack-grid">
+{stack}      </div>
+    </div>
   </section>
 """ + steps(c) + f"""  <section class="pg-sec container">
     <p class="mono label">{E(c['checks_label'])}</p>

@@ -339,8 +339,7 @@
     document.querySelectorAll('[aria-label], [alt], [placeholder]').forEach(el => {
       ['aria-label', 'alt', 'placeholder'].forEach(a => { const v = el.getAttribute(a); if (v && DE[norm(v)] !== undefined) el.setAttribute(a, DE[norm(v)]); });
     });
-    document.title = DE.__title;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', DE.__desc);
+    // title and description are already German in the static page; leave them alone
   }
 
   // dropdown

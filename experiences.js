@@ -1131,7 +1131,160 @@ void main(){
     };
   }
 
+  /* ---------------- Development: particles reassemble desktop, tablet, phone, API ---------------- */
+  function deviceMorph(canvas) {
+    const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false });
+    if (!gl) return null;
+    const N = SMALL ? 5200 : 11000;
+    // each shape is a list of weighted primitives; points are sampled across them by weight
+    const shape = build => {
+      const prims = []; let total = 0;
+      const seg = (a, b, br = 1, k = 1) => { const w = Math.hypot(b[0] - a[0], b[1] - a[1], (b[2] || 0) - (a[2] || 0)) * k; prims.push({ t: 0, a, b, br, w }); total += w; };
+      const fill = (x, y, w, h, br = .35, k = .9, z = 0) => { const wt = w * h * 9 * k; prims.push({ t: 1, x, y, fw: w, fh: h, z, br, w: wt }); total += wt; };
+      const box = (x, y, w, h, r = 0, br = 1, k = 1, z = 0) => {   // rounded rectangle outline
+        const pts = [], n = r > 0 ? 6 : 1;
+        const corner = (cx, cy, a0) => { for (let i = 0; i <= n; i++) { const a = a0 + i / n * Math.PI / 2; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r, z]); } };
+        corner(x + w - r, y + h - r, 0); corner(x + r, y + h - r, Math.PI / 2); corner(x + r, y + r, Math.PI); corner(x + w - r, y + r, Math.PI * 1.5);
+        for (let i = 0; i < pts.length; i++) seg(pts[i], pts[(i + 1) % pts.length], br, k);
+      };
+      const ring = (cx, cy, r, br = 1, k = 1) => { const n = 28; for (let i = 0; i < n; i++) { const a = i / n * 6.283, b = (i + 1) / n * 6.283; seg([cx + Math.cos(a) * r, cy + Math.sin(a) * r, 0], [cx + Math.cos(b) * r, cy + Math.sin(b) * r, 0], br, k); } };
+      build({ seg, fill, box, ring });
+      const out = new Float32Array(N * 4);
+      for (let i = 0; i < N; i++) {
+        let pick = Math.random() * total, p = prims[0];
+        for (const q of prims) { pick -= q.w; if (pick <= 0) { p = q; break; } }
+        const k = Math.random();
+        if (p.t === 0) { out[i * 4] = p.a[0] + (p.b[0] - p.a[0]) * k; out[i * 4 + 1] = p.a[1] + (p.b[1] - p.a[1]) * k; out[i * 4 + 2] = (p.a[2] || 0) + ((p.b[2] || 0) - (p.a[2] || 0)) * k; }
+        else { out[i * 4] = p.x + Math.random() * p.fw; out[i * 4 + 1] = p.y + Math.random() * p.fh; out[i * 4 + 2] = p.z; }
+        out[i * 4 + 3] = p.br;
+      }
+      return out;
+    };
+    const desktop = shape(({ seg, fill, box }) => {
+      box(-1.25, -.5, 2.5, 1.56, .06, 1, 1.4);                 // lid
+      box(-1.16, -.42, 2.32, 1.38, .02, .5, .7);               // screen
+      fill(-1.08, .82, .12, .07, .9); for (let i = 0; i < 4; i++) seg([.35 + i * .18, .855, 0], [.47 + i * .18, .855, 0], .7, 1.2);
+      fill(-1.04, .5, 1.05, .1, .9, 1.3); fill(-1.04, .34, .8, .1, .9, 1.3); fill(-1.04, .16, .5, .055, .6);
+      fill(-1.04, 0, .34, .1, 1, 1.4);                          // button
+      box(.1, -.02, .96, .66, .03, .8); fill(.14, .02, .88, .58, .22, .7);
+      for (let i = 0; i < 3; i++) box(-1.04 + i * .72, -.36, .64, .28, .02, .6, .8);
+      // keyboard deck in perspective, towards the viewer
+      const D = -.56;
+      seg([-1.25, -.5, 0], [-1.45, D, -1.15], 1, 1.2); seg([1.25, -.5, 0], [1.45, D, -1.15], 1, 1.2);
+      seg([-1.45, D, -1.15], [1.45, D, -1.15], 1, 1.4); seg([-1.25, -.5, 0], [1.25, -.5, 0], .8, 1);
+      for (let r = 0; r < 4; r++) for (let c = 0; c < 12; c++) { const z = -.14 - r * .17, x = -1.05 + c * .18 + r * .02; seg([x, D + .01, z], [x + .13, D + .01, z], .45, .7); }
+      seg([-.32, D, -.85], [.32, D, -.85], .6); seg([-.32, D, -1.08], [.32, D, -1.08], .6);
+    });
+    const tablet = shape(({ seg, fill, box }) => {
+      box(-.72, -.98, 1.44, 1.96, .1, 1, 1.4); box(-.64, -.88, 1.28, 1.76, .03, .45, .6);
+      fill(-.56, .7, .3, .07, .9); seg([.3, .735, 0], [.56, .735, 0], .7);
+      fill(-.56, .2, 1.12, .42, .25, .8); box(-.56, .2, 1.12, .42, .02, .8);
+      fill(-.56, .06, .7, .07, .9, 1.3);
+      for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) { box(-.56 + i * .58, -.42 - j * .36, .54, .3, .02, .6, .8); fill(-.5 + i * .58, -.2 - j * .36, .3, .04, .7); }
+      fill(-.04, -.95, .08, .02, .8);
+    });
+    const phone = shape(({ seg, fill, box, ring }) => {
+      box(-.44, -.92, .88, 1.84, .15, 1, 1.5); fill(-.1, .79, .2, .04, 1);
+      fill(-.34, .6, .4, .06, .9, 1.3);
+      fill(-.34, .18, .68, .34, .3, .9); box(-.34, .18, .68, .34, .03, .8);
+      for (let i = 0; i < 4; i++) { ring(-.27, .02 - i * .17, .045, .8, .6); fill(-.18, .01 - i * .17, .36, .03, .7); }
+      seg([-.34, -.72, 0], [.34, -.72, 0], .5); for (let i = 0; i < 4; i++) fill(-.27 + i * .17, -.82, .05, .05, 1);
+    });
+    const api = shape(({ seg, ring, fill }) => {
+      const nodes = [[0, 0, .22], [-.95, .55, .13], [-1.05, -.45, .13], [.95, .6, .13], [1.05, -.4, .13], [0, .88, .1], [0, -.85, .1], [-.5, -.05, .07], [.5, .08, .07]];
+      const edges = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [1, 5], [3, 5], [2, 6], [4, 6], [7, 0], [8, 0], [1, 7], [4, 8]];
+      for (const [a, b] of edges) {
+        const A = nodes[a], B = nodes[b], d = Math.hypot(B[0] - A[0], B[1] - A[1]), ux = (B[0] - A[0]) / d, uy = (B[1] - A[1]) / d;
+        seg([A[0] + ux * A[2], A[1] + uy * A[2], 0], [B[0] - ux * B[2], B[1] - uy * B[2], 0], .55, 1.1);
+      }
+      nodes.forEach(([x, y, r], i) => { ring(x, y, r, 1, 1.6); if (i === 0) { ring(x, y, r * .62, .7, 1); fill(-.07, -.07, .14, .14, 1, 2); } });
+    });
+    let prog;
+    try {
+      prog = compile(gl, `attribute vec4 p0, p1, p2, p3; attribute vec3 rn;
+uniform vec4 uW; uniform float uTime, uMix, uAspect, uSize; uniform vec2 uRot;
+varying float vB; varying float vT;
+void main(){
+  vec4 P = p0 * uW.x + p1 * uW.y + p2 * uW.z + p3 * uW.w;
+  vec3 pos = P.xyz;
+  pos += (rn - .5) * uMix * vec3(1.6, 1.2, 1.4);
+  pos += vec3(sin(uTime * .7 + rn.x * 6.28), cos(uTime * .6 + rn.y * 6.28), sin(uTime * .5 + rn.z * 6.28)) * .008;
+  float cy = cos(uRot.x), sy = sin(uRot.x); pos.xz = mat2(cy, -sy, sy, cy) * pos.xz;
+  float cx = cos(uRot.y), sx = sin(uRot.y); pos.yz = mat2(cx, -sx, sx, cx) * pos.yz;
+  float z = pos.z + 3.4;
+  vec2 pr = pos.xy / z * 2.15; pr.x /= uAspect;
+  gl_Position = vec4(pr, 0., 1.);
+  gl_PointSize = uSize * (.55 + P.w * .7) * (3.4 / z) * (.7 + rn.z * .6);
+  vB = P.w * (.82 + .18 * sin(uTime * 2.2 + rn.x * 40.)) * (1. - uMix * .35);
+  vT = rn.y;
+}`, `precision mediump float; varying float vB; varying float vT;
+void main(){
+  float d = length(gl_PointCoord - .5);
+  float a = smoothstep(.5, .08, d) * vB * .85;
+  vec3 c = mix(vec3(.05, .38, 1.), vec3(.55, .88, 1.), clamp(vB * .9 + vT * .25, 0., 1.));
+  gl_FragColor = vec4(c * a, a);
+}`);
+    } catch (e) { console.warn('deviceMorph', e); return null; }
+    const rnd = new Float32Array(N * 3); for (let i = 0; i < rnd.length; i++) rnd[i] = Math.random();
+    const bufs = [['p0', desktop, 4], ['p1', tablet, 4], ['p2', phone, 4], ['p3', api, 4], ['rn', rnd, 3]].map(([name, data, size]) => {
+      const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+      return { b, size, loc: gl.getAttribLocation(prog.p, name) };
+    });
+    const rot = [0, 0];
+    return {
+      render(time, s) {
+        if (!onScreen(canvas)) return;
+        fit(canvas, 1);
+        const r = canvas.getBoundingClientRect();
+        const inside = P.x >= r.left && P.x <= r.right && P.y >= r.top && P.y <= r.bottom;
+        const mx = inside ? (P.x - r.left) / r.width - .5 : 0, my = inside ? (P.y - r.top) / r.height - .5 : 0;
+        rot[0] += (Math.sin(time * .25) * .16 + mx * .7 - rot[0]) * .05;
+        rot[1] += (-.12 + Math.cos(time * .2) * .05 + my * .35 - rot[1]) * .05;
+        const w = [0, 1, 2, 3].map(k => Math.max(0, 1 - Math.abs(s - k)));
+        const f = s - Math.floor(s);
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE);
+        gl.useProgram(prog.p);
+        for (const B of bufs) { gl.bindBuffer(gl.ARRAY_BUFFER, B.b); gl.enableVertexAttribArray(B.loc); gl.vertexAttribPointer(B.loc, B.size, gl.FLOAT, false, 0, 0); }
+        gl.uniform4f(prog.u.uW, w[0], w[1], w[2], w[3]);
+        gl.uniform1f(prog.u.uTime, time);
+        gl.uniform1f(prog.u.uMix, Math.pow(4 * f * (1 - f), 2.2));
+        gl.uniform1f(prog.u.uAspect, r.width / Math.max(1, r.height));
+        gl.uniform1f(prog.u.uSize, (SMALL ? 2.6 : 2.2) * DPR);
+        gl.uniform2f(prog.u.uRot, rot[0], rot[1]);
+        gl.drawArrays(gl.POINTS, 0, N);
+        canvas.classList.add('live');
+      }
+    };
+  }
+
+  /* ---------------- Development: a circuit board that lights up under the pointer ---------------- */
+  const CIRCUIT = `
+void main(){
+  vec2 px = gl_FragCoord.xy;
+  vec2 m = (uMouse + vec2(.5 * uRes.x / uRes.y, .5)) * uRes.y;
+  float cell = 30.;                                     // ~60 CSS px at half resolution
+  vec2 g = px / cell + vec2(0., uScroll * 3.);
+  vec2 id = floor(g), f = fract(g);
+  float h = hash(id);
+  float lh = smoothstep(.045, .0, abs(f.y - .5)) * step(.3, h) * step(h, .66);
+  float lv = smoothstep(.045, .0, abs(f.x - .5)) * step(.66, h);
+  float via = smoothstep(.14, .09, length(f - .5)) * step(.9, fract(h * 13.7)) * step(.3, h);
+  float tr = max(max(lh, lv), via);
+  float ph = pow(fract(g.x * .06 - uTime * .25 + hash(vec2(id.y, 1.)) * 7.), 26.);
+  float pv = pow(fract(g.y * .06 - uTime * .25 + hash(vec2(id.x, 2.)) * 7.), 26.);
+  float pulse = lh * ph + lv * pv;
+  float lens = smoothstep(cell * 7., 0., length(px - m)) * uHover;
+  float fy = gl_FragCoord.y / uRes.y;
+  float a = (tr * (.07 + lens * .45) + pulse * (.45 + lens * .4)) * smoothstep(0., .18, fy) * smoothstep(1., .82, fy);
+  vec3 c = mix(vec3(0., .34, .75), vec3(.16, .66, 1.), clamp(pulse + lens * .3, 0., 1.));
+  gl_FragColor = vec4(c * a, a);
+}`;
+
   window.WBX = {
+    deviceMorph,
+    circuit: c => shaderLayer(c, CIRCUIT, { name: 'circuit', scale: SMALL ? .6 : .5 }),
     onScreen,
     design: c => shaderLayer(c, DESIGN, { name: 'design', scale: SMALL ? .55 : .5 }),
     tunnel: c => shaderLayer(c, TUNNEL, { name: 'tunnel', scale: .6 }),

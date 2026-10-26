@@ -212,20 +212,15 @@
 .w5, .w6 { align-self: start; }
 .works-cta { grid-column: 9 / span 4; }
 .work-shot { background: #050b1a; }
-.work-shot { display: grid; place-items: center; padding: 7%;
-  background: radial-gradient(90% 80% at 50% 0%, #12306e, #050b1a 75%); }
-.shot-frame { width: 100%; border-radius: 10px; overflow: hidden; background: #0b1226;
-  border: 1px solid rgba(160, 190, 255, .18); box-shadow: 0 24px 60px -18px rgba(0, 0, 0, .6); }
-.shot-bar { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 12px; background: #141c33; }
-.shot-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, .22); }
-.shot-bar span { margin-left: 10px; font: 500 10px/1 'JetBrains Mono', monospace; letter-spacing: .04em; color: rgba(214, 226, 255, .6);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.work-shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; }
-.work:hover .work-shot > .shot-frame { transform: scale(1.03); }
-@media (max-width: 600px) { .work-shot { padding: 6% 5%; } .shot-bar { height: 20px; } }
-.w7 { grid-column: 8 / span 5; margin-top: 12vw; align-self: start; }
-.w7 .work-media { aspect-ratio: 5 / 4; }
-@media (max-width: 900px) { .w5, .w6, .w7 { grid-column: 1; margin-top: 0; } }
+.work-shot { background: none; aspect-ratio: 16 / 10 !important; }
+.work-shot img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.work:hover .work-shot > img { transform: none; }   /* no hover zoom: the whole site stays visible */
+/* three real projects, staggered left / right / left */
+.works .w2 { grid-column: 1 / span 7; margin-top: 0; }
+.works .w3 { grid-column: 6 / span 7; margin-top: 4vw; }
+.works .w7 { grid-column: 1 / span 7; margin-top: 4vw; }
+@media (max-width: 900px) { .works .w2, .works .w3, .works .w7 { grid-column: 1; margin-top: 0; } }
+@media (max-width: 900px) { .w5, .w6 { grid-column: 1; margin-top: 0; } }
 
 /* STAND OUT: held while the letters light up white, lines drift together */
 .standout { min-height: 0; height: 220vh; display: block; padding: 0; }

@@ -263,7 +263,7 @@
       const inset = (1 - e) * 10;
       m.style.clipPath = `inset(${inset}% ${inset}% ${inset}% ${inset}% round ${(1 - e) * 24}px)`;
       const pp = (r.top + r.height / 2 - vh / 2) / vh;
-      const depth = m.classList.contains('work-shot') ? -12 : -40;   // framed screenshots stay inside their box
+      const depth = m.classList.contains('work-shot') ? 0 : -40;   // website screenshots stay whole, never shifted
       [...m.children].forEach(ch => { if (!ch.classList.contains('blob')) ch.style.translate = `0 ${pp * depth}px`; });
     });
 

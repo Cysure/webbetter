@@ -263,7 +263,8 @@
       const inset = (1 - e) * 10;
       m.style.clipPath = `inset(${inset}% ${inset}% ${inset}% ${inset}% round ${(1 - e) * 24}px)`;
       const pp = (r.top + r.height / 2 - vh / 2) / vh;
-      [...m.children].forEach(ch => { if (!ch.classList.contains('blob')) ch.style.translate = `0 ${pp * -40}px`; });
+      const depth = m.classList.contains('work-shot') ? -12 : -40;   // framed screenshots stay inside their box
+      [...m.children].forEach(ch => { if (!ch.classList.contains('blob')) ch.style.translate = `0 ${pp * depth}px`; });
     });
 
     // marquee rows

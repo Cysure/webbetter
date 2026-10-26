@@ -191,7 +191,7 @@ t = Translator(); t.feed(de); t.close()
 de = ''.join(t.out)
 
 def de_links(doc):
-    doc = re.sub(r'href="/(seo-geo|web-app-development|seo|geo|faq|privacy)/', r'href="/de/\1/', doc)
+    doc = re.sub(r'href="/(seo-geo|web-app-development|insights|seo|geo|faq|privacy)/', r'href="/de/\1/', doc)
     doc = re.sub(r'(<a\b[^>]*?)href="/"', r'\1href="/de/"', doc)   # links only, never <base href="/">
 
     return doc
@@ -218,7 +218,7 @@ def url_entry(path):
   </url>
 """ for u in (en, de_))
 write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-      + ''.join(url_entry(p_) for p_ in ('', 'seo-geo/', 'web-app-development/', 'faq/', 'privacy/')) + '</urlset>\n')
+      + ''.join(url_entry(p_) for p_ in ('', 'seo-geo/', 'web-app-development/', 'insights/') + tuple(f'insights/{a["slug"]}/' for a in pages.llms_articles()) + ('faq/', 'privacy/')) + '</urlset>\n')
 
 bots = ['Googlebot', 'Bingbot', 'Google-Extended', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
         'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Applebot', 'Applebot-Extended', 'CCBot', 'meta-externalagent', 'DuckAssistBot',
@@ -248,7 +248,9 @@ write('llms.txt', f'''# Web Better
 - [SEO & GEO]({SITE}/seo-geo/): technical SEO, content, structured data and Core Web Vitals, plus generative engine optimization for ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude.
 - [Web & App Development]({SITE}/web-app-development/): websites, web apps, iOS and Android apps, e-commerce and headless CMS.
 - [FAQ]({SITE}/faq/): answers on websites, costs, timelines, SEO, GEO and website optimisation.
-- [Full text for language models]({SITE}/llms-full.txt): services and every FAQ answer in plain text.
+- [Insights]({SITE}/insights/): sourced articles on GEO, SEO, Core Web Vitals and design for AI search.
+'''
+    + ''.join(f'- [{a["en"]["title"]}]({SITE}/insights/{a["slug"]}/): {a["en"]["desc"]}\n' for a in pages.llms_articles()) + f'''- [Full text for language models]({SITE}/llms-full.txt): services and every FAQ answer in plain text.
 
 ## FAQ
 

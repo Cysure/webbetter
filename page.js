@@ -58,6 +58,20 @@
     if (pre) pre.click();
   }
 
+  /* article contents: highlight the section being read */
+  const tocLinks = $$('.ar-toc a');
+  if (tocLinks.length) {
+    const heads = tocLinks.map(l => document.getElementById(l.getAttribute('href').slice(1)));
+    let cur = -1;
+    const spy = () => {
+      let k = -1;
+      heads.forEach((h, i) => { if (h && h.getBoundingClientRect().top < innerHeight * .35) k = i; });
+      if (k !== cur) { cur = k; tocLinks.forEach((l, i) => l.classList.toggle('on', i === k)); }
+    };
+    addEventListener('scroll', spy, { passive: true });
+    spy();
+  }
+
   /* header + progress + scroll effects */
   const header = $('#header'), progress = $('#progress'), hero = $('.ph');
   const stepsEl = $('.st'), bar = $('.st-bar i'), steps = $$('.st-item');
@@ -138,7 +152,7 @@
       else if (kind === 'dev') L = WBX.tunnel(cv);
       if (L) layers.push(t => { if (hero.getBoundingClientRect().bottom > 0) L.render(kind === 'seo' ? t * .5 : kind === 'dev' ? t * .3 : t, kind === 'geo' ? scrollY / innerHeight * .5 : clamp(scrollY / innerHeight)); });
     }
-    if (cv && (kind === 'faq' || kind === 'privacy') && window.WBGL) {
+    if (cv && ['faq', 'privacy', 'insights', 'article'].includes(kind) && window.WBGL) {
       const R = WBGL.ribbons(cv, { host: hero, count: 5, gain: .9 });
       if (R) layers.push(t => R.render(t * .45, scrollY / innerHeight));
     }

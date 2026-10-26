@@ -682,7 +682,7 @@ def faq_main(lang, base, faq_all):
 ''' + cta(c, lang)
 
 # ------------------------------------------------------------------ head + schema
-def page_head(lang, slug, c, graph_extra):
+def page_head(lang, slug, c, graph_extra, crumbs=None, og_type='website', extra_meta=''):
     url = f'{SITE}/{"de/" if lang == "de" else ""}{slug}/'
     en_url, de_url = f'{SITE}/{slug}/', f'{SITE}/de/{slug}/'
     home = f'{SITE}/{"de/" if lang == "de" else ""}'
@@ -693,8 +693,8 @@ def page_head(lang, slug, c, graph_extra):
        "inLanguage": lang, "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + "/#org"},
        "breadcrumb": {"@id": url + "#breadcrumb"}, "primaryImageOfPage": SITE + "/assets/og-image.png"},
       {"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": UI[lang]['home'], "item": home},
-        {"@type": "ListItem", "position": 2, "name": c['crumb'], "item": url}]},
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": u}
+        for i, (n, u) in enumerate([(UI[lang]['home'], home)] + (crumbs or []) + [(c['crumb'], url)])]},
     ] + graph_extra(url)
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
     locale, alt = ('de_CH', 'en_GB') if lang == 'de' else ('en_GB', 'de_CH')
@@ -709,7 +709,7 @@ def page_head(lang, slug, c, graph_extra):
   <link rel="alternate" hreflang="de-CH" href="{de_url}">
   <link rel="alternate" hreflang="x-default" href="{en_url}">
   <link rel="alternate" type="text/plain" title="LLM summary" href="{SITE}/llms.txt">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{og_type}">{extra_meta}
   <meta property="og:site_name" content="Web Better">
   <meta property="og:url" content="{url}">
   <meta property="og:title" content="{t}">
@@ -737,6 +737,144 @@ def service_ld(c, lang, items):
     def g(url):
         return [{"@type": "Service", "@id": url + "#service", "name": name, "description": desc, "serviceType": name,
                  "provider": {"@id": SITE + "/#org"}, "areaServed": ["CH", "DE", "AT", "Worldwide"], "availableLanguage": ["en", "de"], "url": url}] + faq_ld(items, lang)(url)
+    return g
+
+
+# ------------------------------------------------------------------ insights (articles in tools/articles.py)
+import importlib.util as _ilu, os as _os
+_spec = _ilu.spec_from_file_location('articles', _os.path.join(_os.path.dirname(__file__), 'articles.py'))
+ART = _ilu.module_from_spec(_spec); _spec.loader.exec_module(ART)
+
+INS = {
+ 'en': {
+  'title': 'Insights on SEO, GEO, Performance and Design | Web Better',
+  'desc': 'Research-based articles from Web Better on generative engine optimisation, Core Web Vitals, SEO and designing websites for AI search. Every claim sourced.',
+  'crumb': 'Insights', 'kicker': 'INSIGHTS / RESEARCH AND PRACTICE',
+  'h1a': 'Insights.', 'h1b': 'What we learn building fast, findable websites.',
+  'lead': 'Practical articles on SEO, GEO, performance and design. We link the research behind every claim, so you can check it yourself.',
+  'cta1': 'Start your project', 'list_label': '[ ALL ARTICLES ]',
+  'cta_title': 'Want this applied to your website?', 'cta_text': 'Tell us about your site. We will show you where it stands in search and AI answers, and what to fix first.',
+  'takeaways': 'Key takeaways', 'sources': 'Sources', 'toc': 'On this page', 'more': 'Keep reading', 'min': 'MIN READ', 'all': '[ ALL INSIGHTS ]',
+  'updated': 'Published',
+ },
+ 'de': {
+  'title': 'Insights zu SEO, GEO, Performance und Design | Web Better',
+  'desc': 'Fundierte Artikel von Web Better zu Generative Engine Optimization, Core Web Vitals, SEO und Webdesign für die KI-Suche. Jede Aussage mit Quelle.',
+  'crumb': 'Insights', 'kicker': 'INSIGHTS / FORSCHUNG UND PRAXIS',
+  'h1a': 'Insights.', 'h1b': 'Was wir beim Bau schneller, auffindbarer Websites lernen.',
+  'lead': 'Praxisnahe Artikel zu SEO, GEO, Performance und Design. Wir verlinken die Forschung hinter jeder Aussage, damit Sie sie selbst prüfen können.',
+  'cta1': 'Projekt starten', 'list_label': '[ ALLE ARTIKEL ]',
+  'cta_title': 'Möchten Sie das auf Ihrer Website umsetzen?', 'cta_text': 'Erzählen Sie uns von Ihrer Website. Wir zeigen Ihnen, wo sie in der Suche und in KI-Antworten steht und was Sie zuerst verbessern sollten.',
+  'takeaways': 'Das Wichtigste in Kürze', 'sources': 'Quellen', 'toc': 'Auf dieser Seite', 'more': 'Weiterlesen', 'min': 'MIN. LESEZEIT', 'all': '[ ALLE INSIGHTS ]',
+  'updated': 'Veröffentlicht',
+ },
+}
+
+def _anchor(text):
+    t = re.sub(r'<[^>]+>', '', text).lower()
+    t = t.replace('ä', 'ae').replace('ö', 'oe').replace('ü', 'ue')
+    return re.sub(r'[^a-z0-9]+', '-', t).strip('-')
+
+def post_list(arts, lang, base, numbered=True):
+    rows = []
+    for i, art in enumerate(arts):
+        c = art[lang]
+        rows.append(f'''      <li class="post" data-art="{art['art']}">
+        <span class="post-num mono">{i + 1:02d}</span>
+        <div class="post-main">
+          <p class="mono post-tags">{E(c['tags'])}, <b>{ART.minutes(art, lang)} MIN{'S' if lang == 'en' else '.'}</b></p>
+          <h3><a class="post-link" href="{base}insights/{art['slug']}/">{E(c['title'])}</a></h3>
+          <p class="mono post-by">{E(c['by'])}, <span>{E(c['date'])}</span></p>
+        </div>
+        <p class="post-excerpt">{E(c['dek'])}</p>
+        <span class="post-arrow" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+      </li>''')
+    return '    <ul class="posts">\n' + '\n'.join(rows) + '\n    </ul>\n'
+
+def insights_main(lang, base):
+    c = INS[lang]
+    return hero(c, 'insights', lang, base) + f"""  <section class="pg-sec container insights ins-list">
+    <p class="mono label">{E(c['list_label'])}</p>
+{post_list(ART.ARTICLES, lang, base)}  </section>
+""" + cta(c, lang)
+
+def _block(b):
+    k = b[0]
+    if k == 'h2':
+        return f'      <h2 id="{_anchor(b[1])}">{b[1]}</h2>\n'
+    if k == 'p':
+        return f'      <p>{b[1]}</p>\n'
+    if k in ('ul', 'ol'):
+        return f'      <{k}>' + ''.join(f'<li>{x}</li>' for x in b[1]) + f'</{k}>\n'
+    if k == 'stats':
+        return '      <div class="ar-stats">' + ''.join(f'<div><b>{E(n)}</b><span>{E(t)}</span></div>' for n, t in b[1]) + '</div>\n'
+    if k == 'quote':
+        return f'      <blockquote class="ar-quote"><p>{E(b[1])}</p><cite class="mono">{E(b[2])}</cite></blockquote>\n'
+    if k == 'note':
+        return f'      <aside class="ar-note"><p>{b[1]}</p></aside>\n'
+    raise ValueError(k)
+
+def article_main(art, lang, base):
+    c, u, ui = art[lang], INS[lang], UI[lang]
+    mins = ART.minutes(art, lang)
+    toc = ''.join(f'<li><a href="#{_anchor(b[1])}">{b[1]}</a></li>' for b in c['body'] if b[0] == 'h2')
+    body = ''.join(_block(b) for b in c['body'])
+    take = ''.join(f'<li>{E(x)}</li>' for x in c['takeaways'])
+    srcs = ''.join(f'<li><a href="{s_url}" target="_blank" rel="noopener">{E(s_name)}</a></li>' for s_name, s_url in art['sources'])
+    others = [a for a in ART.ARTICLES if a is not art]
+    return f'''  <section class="ph ar-hero" data-kind="article">
+    <canvas class="ph-gl" id="phGL" aria-hidden="true"></canvas>
+    <div class="ph-shade" aria-hidden="true"></div>
+    <div class="container ph-inner">
+      <nav class="ph-crumb mono" aria-label="Breadcrumb"><a href="{base}">{E(ui['home'])}</a><span>/</span><a href="{base}insights/">{E(u['crumb'])}</a><span>/</span><span aria-current="page">{E(c['tags'].split(',')[0])}</span></nav>
+      <p class="mono ph-kicker">{E(c['tags'])} · {mins} {u['min']}</p>
+      <h1 class="ph-title ar-title">{E(c['title'])}</h1>
+      <p class="ph-lead">{E(c['dek'])}</p>
+      <p class="mono ar-meta"><span>{E(c['by'])}</span><span>{u['updated']} <time datetime="{art['date']}">{E(c['date'])}</time></span></p>
+    </div>
+  </section>
+  <div class="container ar-wrap">
+    <aside class="ar-toc" aria-label="{A(u['toc'])}">
+      <p class="mono label">{E(u['toc'])}</p>
+      <ol>{toc}</ol>
+    </aside>
+    <article class="ar-body">
+      <section class="ar-take" aria-labelledby="take-{art['slug']}">
+        <h2 class="mono" id="take-{art['slug']}">{E(u['takeaways'])}</h2>
+        <ul>{take}</ul>
+      </section>
+{body}      <section class="ar-sources" aria-labelledby="src-{art['slug']}">
+        <h2 class="mono" id="src-{art['slug']}">{E(u['sources'])}</h2>
+        <ol>{srcs}</ol>
+      </section>
+    </article>
+  </div>
+  <section class="pg-sec container insights ar-more">
+    <div class="insights-head">
+      <h2>{E(u['more'])}</h2>
+      <a href="{base}insights/" class="btn mono">{E(u['all'])}</a>
+    </div>
+{post_list(others, lang, base)}  </section>
+''' + cta(u, lang)
+
+def article_ld(art, lang):
+    c = art[lang]
+    def g(url):
+        return [{"@type": "BlogPosting", "@id": url + "#article", "headline": c['title'], "description": c['desc'],
+                 "inLanguage": lang, "datePublished": art['date'], "dateModified": art['date'],
+                 "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"},
+                 "mainEntityOfPage": {"@id": url + "#webpage"}, "image": SITE + "/assets/og-image.png",
+                 "articleSection": c['tags'].split(',')[0].strip().title(), "keywords": c['tags'].title(),
+                 "wordCount": ART.words(art, lang), "isPartOf": {"@id": SITE + "/" + ("de/" if lang == "de" else "") + "insights/#webpage"},
+                 "citation": [s_url for _, s_url in art['sources']]}]
+    return g
+
+def insights_ld(lang):
+    base = SITE + '/' + ('de/' if lang == 'de' else '')
+    def g(url):
+        return [{"@type": "ItemList", "@id": url + "#list", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": f"{base}insights/{a['slug']}/", "name": a[lang]['title']}
+            for i, a in enumerate(ART.ARTICLES)]}]
     return g
 
 # ------------------------------------------------------------------ page shell
@@ -799,9 +937,20 @@ def build(ctx):
           ('web-app-development', DEV[lang], dev_main(lang, base, dev_items), service_ld(DEV[lang], lang, dev_items)),
           ('faq', FAQP[lang], faq_main(lang, base, FAQ), faq_ld(FAQ, lang)),
           ('privacy', PRIVACY[lang], privacy_main(lang, base), lambda url: []),
+          ('insights', INS[lang], insights_main(lang, base), insights_ld(lang)),
         ]
-        for slug, c, main, ld in specs:
-            doc = shell(lang, page_head(lang, slug, c, ld), main, absolutise(top, lang), absolutise(bottom, lang), slug)
+        home = f'{SITE}/{"de/" if lang == "de" else ""}'
+        for art in ART.ARTICLES:
+            c = art[lang]
+            head_c = {'title': c['seo_title'], 'desc': c['desc'], 'crumb': c['title']}
+            extra = (f'\n  <meta property="article:published_time" content="{art["date"]}">'
+                     f'\n  <meta property="article:section" content="{A(c["tags"].split(",")[0].strip().title())}">')
+            specs.append((f'insights/{art["slug"]}', head_c, article_main(art, lang, base), article_ld(art, lang),
+                          [(INS[lang]['crumb'], home + 'insights/')], 'article', extra))
+        for spec in specs:
+            slug, c, main, ld = spec[:4]
+            crumbs, og_type, extra = (spec[4:] + (None, 'website', ''))[:3] if len(spec) > 4 else (None, 'website', '')
+            doc = shell(lang, page_head(lang, slug, c, ld, crumbs, og_type, extra), main, absolutise(top, lang), absolutise(bottom, lang), slug.split('/')[0])
             if lang == 'de':
                 t = ctx['Translator'](); t.feed(doc); t.close(); doc = ''.join(t.out)
                 doc = ctx['de_links'](doc)
@@ -812,3 +961,6 @@ def build(ctx):
 
 def llms_pages():
     return {'seo': SEO, 'geo': GEO, 'dev': DEV}
+
+def llms_articles():
+    return ART.ARTICLES

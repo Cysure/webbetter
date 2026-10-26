@@ -22,6 +22,10 @@
 - [SEO & GEO](https://webbetter.ch/seo-geo/): technical SEO, content, structured data and Core Web Vitals, plus generative engine optimization for ChatGPT, Perplexity, Gemini, AI Overviews, Copilot and Claude.
 - [Web & App Development](https://webbetter.ch/web-app-development/): websites, web apps, iOS and Android apps, e-commerce and headless CMS.
 - [FAQ](https://webbetter.ch/faq/): answers on websites, costs, timelines, SEO, GEO and website optimisation.
+- [Insights](https://webbetter.ch/insights/): sourced articles on GEO, SEO, Core Web Vitals and design for AI search.
+- [GEO is the new SEO: how brands get cited by AI assistants](https://webbetter.ch/insights/geo-is-the-new-seo/): How ChatGPT, Google AI Overviews and Claude choose their sources, what the research says about getting cited, and a practical GEO checklist for your website.
+- [Core Web Vitals in 2026: speed is still a ranking story](https://webbetter.ch/insights/core-web-vitals-2026/): The three Core Web Vitals, their thresholds, what Google says about ranking, what speed is worth in revenue, and the checklist we use on every rebuild.
+- [Designing for answers, not just clicks](https://webbetter.ch/insights/designing-for-answers/): AI summaries mean fewer clicks and more paraphrase. What the data shows, and how we design websites and brands that still win when the first touchpoint is an AI answer.
 - [Full text for language models](https://webbetter.ch/llms-full.txt): services and every FAQ answer in plain text.
 
 ## FAQ

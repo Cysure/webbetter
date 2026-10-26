@@ -242,7 +242,7 @@ ARTICLES = [
   'tags': 'DESIGN, STRATEGY', 'by': 'DESIGN STUDIO', 'date': '09 SEPTEMBER, 2026',
   'title': 'Designing for answers, not just clicks',
   'seo_title': 'Designing for Answers, Not Just Clicks | Web Better',
-  'desc': 'AI summaries mean fewer clicks and more paraphrase. What the data shows, and how we design websites and brands that still win when the first touchpoint is an AI answer.',
+  'desc': 'AI summaries mean fewer clicks and more paraphrase. What the data shows, and how to design websites that still win when the first touchpoint is an AI answer.',
   'dek': 'When the first touchpoint is an AI summary, your brand has to survive being paraphrased. Here is how we design for it.',
   'takeaways': [
     'Pew Research found people clicked a result in 8% of Google visits with an AI summary, against 15% without one.',
@@ -277,7 +277,7 @@ ARTICLES = [
   'tags': 'DESIGN, STRATEGIE', 'by': 'DESIGN STUDIO', 'date': '09. SEPTEMBER 2026',
   'title': 'Gestalten für Antworten, nicht nur für Klicks',
   'seo_title': 'Gestalten für Antworten, nicht nur für Klicks | Web Better',
-  'desc': 'KI-Zusammenfassungen bedeuten weniger Klicks und mehr Paraphrase. Was die Daten zeigen und wie wir Websites und Marken gestalten, die auch dann gewinnen, wenn der erste Kontakt eine KI-Antwort ist.',
+  'desc': 'KI-Zusammenfassungen bringen weniger Klicks. Was die Daten zeigen und wie Websites gewinnen, wenn der erste Kontakt eine KI-Antwort ist.',
   'dek': 'Wenn der erste Kontakt eine KI-Zusammenfassung ist, muss Ihre Marke die Paraphrase überstehen. So gestalten wir dafür.',
   'takeaways': [
     'Pew Research zeigte: Bei Google-Suchen mit KI-Zusammenfassung klickten Menschen in 8 % der Fälle auf ein Ergebnis, ohne Zusammenfassung in 15 %.',
@@ -314,6 +314,13 @@ ARTICLES = [
              ('Aggarwal et al., “GEO: Generative Engine Optimization”, KDD 2024', GEO_PAPER)],
 },
 ]
+
+
+# newer articles live in articles_more.py; newest first
+import importlib.util as _ilu, os as _os
+_spec = _ilu.spec_from_file_location('articles_more', _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'articles_more.py'))
+_more = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_more)
+ARTICLES = _more.MORE + ARTICLES
 
 
 def words(art, lang):

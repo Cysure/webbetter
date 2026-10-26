@@ -23,9 +23,13 @@
 - [Web & App Development](https://webbetter.ch/web-app-development/): websites, web apps, iOS and Android apps, e-commerce and headless CMS.
 - [FAQ](https://webbetter.ch/faq/): answers on websites, costs, timelines, SEO, GEO and website optimisation.
 - [Insights](https://webbetter.ch/insights/): sourced articles on GEO, SEO, Core Web Vitals and design for AI search.
+- [How to relaunch your website without losing your Google rankings](https://webbetter.ch/insights/website-relaunch-without-losing-seo/): A website relaunch checklist based on Google's site-move guidance: URL mapping, 301 redirects, sitemaps and what to watch in the weeks after launch.
+- [The Swiss Data Protection Act and your website: what you actually need](https://webbetter.ch/insights/swiss-data-protection-act-websites/): What the Swiss Data Protection Act (FADP) requires from your website: privacy notice, cookies, contact forms, analytics and data abroad, explained.
+- [Multilingual websites in Switzerland: getting German, French, Italian and English right](https://webbetter.ch/insights/multilingual-websites-switzerland/): Multilingual websites for Switzerland: URL structure, hreflang, language switching and localisation, so Google shows each visitor the right language.
+- [The European Accessibility Act and WCAG 2.2: what Swiss companies need to know](https://webbetter.ch/insights/european-accessibility-act-wcag-22/): The European Accessibility Act has applied since June 2025. Who it covers, including Swiss companies selling to the EU, and what WCAG 2.2 adds.
 - [GEO is the new SEO: how brands get cited by AI assistants](https://webbetter.ch/insights/geo-is-the-new-seo/): How ChatGPT, Google AI Overviews and Claude choose their sources, what the research says about getting cited, and a practical GEO checklist for your website.
 - [Core Web Vitals in 2026: speed is still a ranking story](https://webbetter.ch/insights/core-web-vitals-2026/): The three Core Web Vitals, their thresholds, what Google says about ranking, what speed is worth in revenue, and the checklist we use on every rebuild.
-- [Designing for answers, not just clicks](https://webbetter.ch/insights/designing-for-answers/): AI summaries mean fewer clicks and more paraphrase. What the data shows, and how we design websites and brands that still win when the first touchpoint is an AI answer.
+- [Designing for answers, not just clicks](https://webbetter.ch/insights/designing-for-answers/): AI summaries mean fewer clicks and more paraphrase. What the data shows, and how to design websites that still win when the first touchpoint is an AI answer.
 - [Full text for language models](https://webbetter.ch/llms-full.txt): services and every FAQ answer in plain text.
 
 ## FAQ

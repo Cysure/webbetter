@@ -86,7 +86,7 @@
         ok = r.ok;
       } catch (err) { ok = false; }
       sendBtn.disabled = false; dlg.classList.remove('sending');
-      if (ok) { form.hidden = true; done.hidden = false; form.reset(); if (drop) showFile(); status.textContent = ''; return; }
+      if (ok) { if (kind === 'enquiry') window.dispatchEvent(new CustomEvent('wb-lead', { detail: { kind } })); form.hidden = true; done.hidden = false; form.reset(); if (drop) showFile(); status.textContent = ''; return; }
 
       // fallback: the visitor's own email app, so nothing is lost
       const lines = (kind === 'careers' ? [

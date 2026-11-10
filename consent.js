@@ -18,7 +18,7 @@
     laws: ['DSG · Schweiz', 'DSGVO · EU', 'TDDDG · Deutschland', 'TKG · Österreich'],
     nec: 'Notwendig', necT: 'Speichert Ihre Einwilligung, Sprache und Darstellung. Ohne diese Daten funktioniert die Website nicht.',
     ana: 'Analyse', anaT: 'Anonyme Statistiken darüber, wie die Website genutzt wird. Derzeit nicht im Einsatz.',
-    mkt: 'Marketing', mktT: 'Meta Pixel (Meta Platforms Ireland): misst, ob unsere Anzeigen auf Facebook und Instagram zu Anfragen führen, und ermöglicht passende Werbung.',
+    mkt: 'Marketing', mktT: 'Meta Pixel (Meta Platforms Ireland) und Google Ads Conversion-Tracking (Google Ireland): messen, ob unsere Anzeigen auf Facebook, Instagram und Google zu Anfragen führen, und ermöglichen passende Werbung.',
     always: 'Immer aktiv', reopen: 'Datenschutz-Einstellungen'
   } : {
     title: 'Privacy notice',
@@ -31,7 +31,7 @@
     laws: ['FADP · Switzerland', 'GDPR · EU', 'TDDDG · Germany', 'TKG · Austria'],
     nec: 'Necessary', necT: 'Remembers your consent, language and display settings. The website cannot work without it.',
     ana: 'Analytics', anaT: 'Anonymous statistics about how the website is used. Not currently in use.',
-    mkt: 'Marketing', mktT: 'Meta Pixel (Meta Platforms Ireland): measures whether our ads on Facebook and Instagram lead to enquiries and enables relevant advertising.',
+    mkt: 'Marketing', mktT: 'Meta Pixel (Meta Platforms Ireland) and Google Ads conversion tracking (Google Ireland): measure whether our ads on Facebook, Instagram and Google lead to enquiries and enable relevant advertising.',
     always: 'Always on', reopen: 'Privacy settings'
   };
   const read = () => { try { const v = JSON.parse(localStorage.getItem(KEY)); return v && v.v === VERSION ? v : null; } catch (e) { return null; } };

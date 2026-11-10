@@ -339,6 +339,84 @@ UI = {
 }
 
 
+# ------------------------------------------------------------------ paid-ads landing page (Google / Meta), noindex
+LP = {
+ 'en': {
+  'title': 'Free Website Check & Design Draft for Your Business | Web Better',
+  'desc': 'Get a free, no-obligation website check and a first design draft for your business from Web Better, the Swiss studio for websites, apps, SEO and GEO.',
+  'robots': 'noindex, follow',
+  'crumb': 'Free website check', 'kicker': 'FOR BUSINESS OWNERS / FREE AND NO OBLIGATION',
+  'h1a': 'Your new website.', 'h1b': 'Designed before you spend a franc.',
+  'lead': 'Web Better checks your current website and designs a first draft of your new homepage, free and with no obligation. You see exactly what you get before you decide anything.',
+  'cta1': 'Request my free check', 'cta2': '',
+  'stats_label': '[ WHAT OUR SITES DELIVER ]',
+  'stats': [('1', 's', 'load time or less'), ('100', '%', 'mobile-first and responsive'), ('2', '', 'languages out of the box, DE and EN'), ('24', 'h', 'until we get back to you')],
+  'pillars_label': '[ WHAT YOU GET, FREE ]', 'pillars_title': 'Three things,<br>no strings attached.',
+  'pillars': [
+    ('Website check', 'We analyse your current site the way Google and your customers see it.', ['Speed and technology', 'Mobile experience', 'Clear next steps']),
+    ('Visibility in Google & AI', 'We check whether Google and AI assistants like ChatGPT recommend you.', ['Google rankings', 'ChatGPT, Perplexity, Gemini', 'Gaps versus competitors']),
+    ('Design draft', 'A first draft of your new homepage, tailored to your business and brand.', ['Individual, not a template shop', 'Your brand and audience', 'Discussed together, 15 minutes']),
+  ],
+  'refs_label': '[ COMPANIES THAT TRUST US ]', 'refs_title': 'Recent work.',
+  'refs': [('veyns.jpg', 'Veyns', 'Immersive brand website'), ('qufi.jpg', 'QuFi Network', 'Protocol website'), ('nabd.jpg', 'NABD', 'Network website')],
+  'steps_label': '[ HOW IT WORKS ]', 'steps_title': 'Three steps,<br>no effort for you.',
+  'steps': [
+    ('Send your request', 'One minute: your name, company and current website.'),
+    ('Short call', 'We get to know your business in 15 minutes, by phone or video.'),
+    ('Check and draft', 'You receive your website check and design draft, free and with no obligation.'),
+  ],
+  'checks_label': '[ OUR PROMISE ]', 'checks_title': 'Free. No obligation. No effort.',
+  'checks': ['No costs for the check and the draft', 'No contract, no obligation', 'Reply within 24 hours', 'Swiss studio, personal contact', 'Websites, web apps and mobile apps', 'Website projects from CHF 5,000'],
+  'cta_title': 'Only 10 places per month.', 'cta_text': 'We create a limited number of free drafts each month so every one gets our full attention. Secure yours now.',
+ },
+ 'de': {
+  'title': 'Kostenloser Website-Check & Entwurf für Ihr Unternehmen | Web Better',
+  'desc': 'Kostenloser, unverbindlicher Website-Check und ein erster Entwurf Ihrer neuen Website von Web Better, dem Schweizer Studio für Websites, Apps, SEO und GEO.',
+  'robots': 'noindex, follow',
+  'crumb': 'Kostenloser Website-Check', 'kicker': 'FÜR UNTERNEHMER / KOSTENLOS & UNVERBINDLICH',
+  'h1a': 'Ihre neue Website.', 'h1b': 'Entworfen, bevor Sie einen Franken ausgeben.',
+  'lead': 'Web Better prüft Ihre aktuelle Website und gestaltet einen ersten Entwurf Ihrer neuen Startseite, kostenlos und unverbindlich. Sie sehen genau, was Sie bekommen, bevor Sie sich entscheiden.',
+  'cta1': 'Kostenlosen Check anfordern', 'cta2': '',
+  'stats_label': '[ DAS LEISTEN UNSERE WEBSITES ]',
+  'stats': [('1', 's', 'Ladezeit oder schneller'), ('100', '%', 'mobil optimiert und responsiv'), ('2', '', 'Sprachen inklusive, DE und EN'), ('24', 'h', 'bis zu unserer Rückmeldung')],
+  'pillars_label': '[ DAS ERHALTEN SIE KOSTENLOS ]', 'pillars_title': 'Drei Dinge,<br>ohne Haken.',
+  'pillars': [
+    ('Website-Check', 'Wir analysieren Ihre aktuelle Website so, wie Google und Ihre Kunden sie sehen.', ['Ladezeit und Technik', 'Darstellung auf dem Handy', 'Klare nächste Schritte']),
+    ('Sichtbarkeit in Google & KI', 'Wir prüfen, ob Google und KI-Assistenten wie ChatGPT Sie empfehlen.', ['Google-Rankings', 'ChatGPT, Perplexity, Gemini', 'Lücken gegenüber der Konkurrenz']),
+    ('Design-Entwurf', 'Ein erster Entwurf Ihrer neuen Startseite, abgestimmt auf Ihr Unternehmen und Ihre Marke.', ['Individuell, kein Baukasten', 'Ihre Marke und Zielgruppe', 'Gemeinsam besprochen, 15 Minuten']),
+  ],
+  'refs_label': '[ UNTERNEHMEN, DIE UNS VERTRAUEN ]', 'refs_title': 'Aktuelle Projekte.',
+  'refs': [('veyns.jpg', 'Veyns', 'Immersive Marken-Website'), ('qufi.jpg', 'QuFi Network', 'Protokoll-Website'), ('nabd.jpg', 'NABD', 'Netzwerk-Website')],
+  'steps_label': '[ SO EINFACH GEHT ES ]', 'steps_title': 'Drei Schritte,<br>kein Aufwand für Sie.',
+  'steps': [
+    ('Anfrage senden', 'Eine Minute: Name, Firma und Ihre aktuelle Website.'),
+    ('Kurzes Gespräch', 'Wir lernen Ihr Unternehmen in 15 Minuten kennen, per Telefon oder Video.'),
+    ('Check und Entwurf', 'Sie erhalten Ihren Website-Check und Ihren Entwurf, kostenlos und unverbindlich.'),
+  ],
+  'checks_label': '[ UNSER VERSPRECHEN ]', 'checks_title': 'Kostenlos. Unverbindlich. Ohne Aufwand.',
+  'checks': ['Keine Kosten für Check und Entwurf', 'Kein Vertrag, keine Verpflichtung', 'Rückmeldung innerhalb von 24 Stunden', 'Schweizer Studio, persönlicher Kontakt', 'Websites, Web-Apps und Mobile-Apps', "Website-Projekte ab CHF 5'000"],
+  'cta_title': 'Nur 10 Plätze pro Monat.', 'cta_text': 'Wir erstellen jeden Monat nur eine begrenzte Anzahl kostenloser Entwürfe, damit jeder unsere volle Aufmerksamkeit bekommt. Sichern Sie sich Ihren Platz.',
+ },
+}
+
+LP_REF_IMG = 'style="width:100%;height:auto;border-radius:14px;display:block;margin-bottom:14px"'
+LP_BTN = '    <div class="container" style="text-align:center;margin:8px auto 64px"><a class="ph-btn primary" href="mailto:beratung@webbetter.ch" data-enquiry>{label} <svg><use href="#arrow"/></svg></a></div>\n'
+
+def lp_main(lang, base):
+    c = LP[lang]
+    stats = ''.join('      <div class="sx reveal"><b><span data-count="%s">%s</span>%s</b><span>%s</span></div>\n' % (n, n, u, E(t)) for n, u, t in c['stats'])
+    refs = ''.join('      <article class="en-card reveal lp-ref" style="--i:%d"><img src="/assets/clients/%s" alt="%s: %s" loading="lazy" %s><h3>%s</h3><p>%s</p></article>\n'
+                   % (i, img, E(n), E(d), LP_REF_IMG, E(n), E(d)) for i, (img, n, d) in enumerate(c['refs']))
+    checks = ''.join('<li class="ck reveal" style="--i:%d"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>%s</li>' % (i, E(x)) for i, x in enumerate(c['checks']))
+    btn = LP_BTN.format(label=E(c['cta1']))
+    return (hero(c, 'dev', lang, base)
+        + '  <section class="pg-sec container">\n    <p class="mono label">%s</p>\n    <div class="sx-row">\n%s    </div>\n  </section>\n' % (E(c['stats_label']), stats)
+        + pillars(c) + btn
+        + '  <section class="pg-sec container">\n    <p class="mono label">%s</p>\n    <h2 class="pg-h2 reveal">%s</h2>\n    <div class="en-grid">\n%s    </div>\n  </section>\n' % (E(c['refs_label']), E(c['refs_title']), refs)
+        + steps(c)
+        + '  <section class="pg-sec container">\n    <p class="mono label">%s</p>\n    <h2 class="pg-h2 reveal">%s</h2>\n    <ul class="ck-grid">%s</ul>\n  </section>\n' % (E(c['checks_label']), E(c['checks_title']), checks)
+        + btn + cta(c, lang))
+
 # ------------------------------------------------------------------ privacy policy (Swiss FADP / EU GDPR)
 COMPANY_ADDRESS = ''   # e.g. 'Musterstrasse 1, 8000 Zürich, Switzerland'. Fill in before launch.
 PRIVACY = {
@@ -701,7 +779,7 @@ def page_head(lang, slug, c, graph_extra, crumbs=None, og_type='website', extra_
     t = A(c['title']); d = A(c['desc'])
     return f'''  <title>{E(c['title'])}</title>
   <meta name="description" content="{d}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="{c.get('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')}">
   <meta name="theme-color" content="#030817">
   <link rel="canonical" href="{url}">
   <link rel="alternate" hreflang="en" href="{en_url}">
@@ -938,6 +1016,7 @@ def build(ctx):
           ('web-app-development', DEV[lang], dev_main(lang, base, dev_items), service_ld(DEV[lang], lang, dev_items)),
           ('faq', FAQP[lang], faq_main(lang, base, FAQ), faq_ld(FAQ, lang)),
           ('privacy', PRIVACY[lang], privacy_main(lang, base), lambda url: []),
+          ('website-check', LP[lang], lp_main(lang, base), lambda url: []),
           ('insights', INS[lang], insights_main(lang, base), insights_ld(lang)),
         ]
         home = f'{SITE}/{"de/" if lang == "de" else ""}'
